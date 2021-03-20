@@ -1,0 +1,365 @@
+[{
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "swo1",
+            "name": "Short-sword",
+            "description": "Lightweight, sharp, excellent cutting power. Yielded by Elven warlords and Dwarf warriors. Concealable and fast for the draw. Make the first strike when you're close in.",
+            "price": 2,
+            "category": 1,
+            "rating": 4.6,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/7/73/Shortsword-European.jpg/revision/latest/scale-to-width-down/170?cb=20100503210002",
+            "image": "Shortsword-European.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "swo2",
+            "name": "Long-sword",
+            "description": "Heavyweight, ultra-sharp folded steel, superb cutting power. Yielded by human warlords and warriors. Heavy lifting, maximum damage on impact.",
+            "price": 5,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/3/34/Longsword.png/revision/latest/scale-to-width-down/146?cb=20200624112909",
+            "image": "Longsword.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "swo3",
+            "name": "Broad-sword",
+            "description": "Medium weight with perfect balance, ultra-sharp with multiple carbon alloyed folded steel, unbeatable cutting power. Yielded by high-lords, kings and princes.",
+            "price": 12,
+            "category": 1,
+            "rating": 5.0,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/d/df/Albruin.jpg/revision/latest/scale-to-width-down/400?cb=20181114011642",
+            "image": "Albruin.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "dag1",
+            "name": "Dagger",
+            "description": "Light weight and perfectly balanced, ultra-sharp Xianian steel. Ideal for close range combat. Yielded by kings and queens alike. A must have for warriors.",
+            "price": 6,
+            "category": 2,
+            "rating": 4.9,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/9/9f/Whetstone.png/revision/latest/scale-to-width-down/181?cb=20190620164513",
+            "image": "Whetstone.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "dag2",
+            "name": "Spider's Fang",
+            "description": "Super light weight cursed blade, ultra-sharp Thalidin steel. Ideal for assassination. No assassin would be without one.",
+            "price": 11,
+            "category": 2,
+            "rating": 5.0,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/SpiderFang.png/revision/latest/scale-to-width-down/270?cb=20200710165801",
+            "image": "SpiderFang.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "mac1",
+            "name": "Light Mace",
+            "description": "Close range combat item which can render an opponent unconscious in seconds.",
+            "price": 4,
+            "category": 4,
+            "rating": 3.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/0/06/Light-mace1.jpg/revision/latest/scale-to-width-down/1000?cb=20111012051505",
+            "image": "Light-mace1.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "pik1",
+            "name": "Pike",
+            "description": "Pole weapon used to prevent any attackers from getting in close. Suitable for knights and warriors guarding towers and castles",
+            "price": 9,
+            "category": 4,
+            "rating": 3.4,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/3/3a/Halberd1.jpg/revision/latest/scale-to-width-down/1000?cb=20111006023306",
+            "image": "Halberd1.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "sho1",
+            "name": "Short Bow",
+            "description": "Long range melee weapon. Comes with 15 steel tipped arrows.",
+            "price": 11,
+            "category": 5,
+            "rating": 4.2,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Yumi-p1000624.jpg/800px-Yumi-p1000624.jpg",
+            "image": "800px-Yumi-p1000624.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "lon1",
+            "name": "Long Bow",
+            "description": "Extreme range melee weapon. Comes with 15 steel tipped arrows.",
+            "price": 21,
+            "category": 5,
+            "rating": 4.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/a/a6/Longbow2e.png/revision/latest/scale-to-width-down/314?cb=20200521023814",
+            "image": "Longbow2e.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "cro1",
+            "name": "Crossbow",
+            "description": "Extreme range melee weapon. Comes with 15 steel tipped crossbow-bolts.",
+            "price": 29,
+            "category": 5,
+            "rating": 5.0,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/0/0c/Crossbow_Bolts2e.png/revision/latest/scale-to-width-down/763?cb=20200521022723",
+            "image": "Crossbow_Bolts2e.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "aro1",
+            "name": "Short Bow Arrows",
+            "description": "15 steel tipped arrows",
+            "price": 5,
+            "category": 5,
+            "rating": 4.8,
+            "image_url": "http://4.bp.blogspot.com/-gt6Xj7DzvQA/VmMn3dM96TI/AAAAAAAAIhg/r1MIjIrB9xk/s320/UC3105lg.jpg",
+            "image": "800px-Yumi-p1000624.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "aro2",
+            "name": "Long Bow Arrows",
+            "description": "15 steel tipped arrows",
+            "price": 5,
+            "category": 5,
+            "rating": 4.8,
+            "image_url": "http://4.bp.blogspot.com/-gt6Xj7DzvQA/VmMn3dM96TI/AAAAAAAAIhg/r1MIjIrB9xk/s320/UC3105lg.jpg",
+            "image": "800px-Yumi-p1000624.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "bol1",
+            "name": "Crossbow Bolts",
+            "description": "Bolts for your crossbow",
+            "price": 10,
+            "category": 5,
+            "rating": 5.0,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/e/e5/Bolts.png/revision/latest/scale-to-width-down/222?cb=20180925215109",
+            "image": "Bolts.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "clo1",
+            "name": "Clothing",
+            "description": "Offers no protection.",
+            "price": 1,
+            "category": 6,
+            "rating": 1.0,
+            "image_url": "https://pm1.narvii.com/6883/bf5a3a3ede3603f719c0f8545f0eda00ee31b2b5r1-2048-1505v2_hq.jpg",
+            "image": "clothes.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "clo2",
+            "name": "Heal Cloth",
+            "description": "Offers no protection but aides in healing. Allows for quiet and stealthy movement",
+            "price": 11,
+            "category": 6,
+            "rating": 4.0,
+            "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/159655e5-0c15-4841-acc0-d4f8654a65de/d627ipi-35adaade-c615-4267-836b-a91bcc8688d9.jpg/v1/fill/w_600,h_631,q_75,strp/gazeraz_mage___concept_by_mizaeltengu_d627ipi-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD02MzEiLCJwYXRoIjoiXC9mXC8xNTk2NTVlNS0wYzE1LTQ4NDEtYWNjMC1kNGY4NjU0YTY1ZGVcL2Q2MjdpcGktMzVhZGFhZGUtYzYxNS00MjY3LTgzNmItYTkxYmNjODY4OGQ5LmpwZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.DD9MyvZVo1jQoCLla3dqaz8THqN3kPGbO4aM98x9z7M",
+            "image": "healcloth.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "lea1",
+            "name": "Leather Armour",
+            "description": "Offers limited protection but is light and aides movement",
+            "price": 7,
+            "category": 7,
+            "rating": 2.9,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/b/b2/Leather.jpg/revision/latest/scale-to-width-down/265?cb=20151019005254",
+            "image": "Leather.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "ste1",
+            "name": "Steel Scale Armour",
+            "description": "Heavy protection from all assault and melee weapons. Allows near unrestricted movement.",
+            "price": 23,
+            "category": 9,
+            "rating": 4.9,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/a/a5/Scale.jpg/revision/latest/scale-to-width-down/265?cb=20151019005255",
+            "image": "Scale.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "cha1",
+            "name": "Chainmail Armour",
+            "description": "Heavy protection from all assault and melee weapons. More restricted movement but maximum protection.",
+            "price": 18,
+            "category": 8,
+            "rating": 4.3,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/c/ca/Chain_shirt-5e.jpg/revision/latest/scale-to-width-down/639?cb=20191009042405",
+            "image": "Chain_shirt-5e.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "lea3",
+            "name": "Studded Leather",
+            "description": "Good protection and low restriction of movement, light and versatile",
+            "price": 11,
+            "category": 7,
+            "rating": 4.4,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/8/85/StuddedLeather-5e.png/revision/latest/scale-to-width-down/645?cb=20200628135121",
+            "image": "StuddedLeather-5e.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "foo1",
+            "name": "3 Portions",
+            "description": "Three portions of food",
+            "price": 1,
+            "category": 10,
+            "rating": 3.0,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
+            "image": "Crackers-2e.jpg"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "foo2",
+            "name": "9 Portions",
+            "description": "Three portions of food",
+            "price": 2,
+            "category": 10,
+            "rating": 3.6,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
+            "image": "Crackers-2e.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "foo3",
+            "name": "15 Portions",
+            "description": "Three portions of food",
+            "price": 3,
+            "category": 10,
+            "rating": 3.9,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
+            "image": "Crackers-2e.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "pot1",
+            "name": "Potion of Fire Resistance",
+            "description": "Lower your risk of being exposed to fire magic and spells. Including dragon breath",
+            "price": 19,
+            "category": 11,
+            "rating": 4.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/2/22/Fire_resistance_bg3.png/revision/latest/scale-to-width-down/256?cb=20210312005330",
+            "image": "Fire_resistance_bg3.jpg"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "pot2",
+            "name": "Potion of Speed",
+            "description": "Increase your speed, including attack speed.",
+            "price": 19,
+            "category": 11,
+            "rating": 4.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/7/79/Potion_of_speed_5e.png/revision/latest/scale-to-width-down/374?cb=20210302032548",
+            "image": "Potion_of_speed_5e.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "pot2",
+            "name": "Potion of Healing",
+            "description": "Fix your aches and pains and even wounds, return your health within minutes.",
+            "price": 19,
+            "category": 11,
+            "rating": 4.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/d/d9/Potion_of_healing-5e.jpg/revision/latest/scale-to-width-down/163?cb=20200512233142",
+            "image": "Potion_of_healing-5e.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "pot2",
+            "name": "Healing",
+            "description": "Return your strength after battle",
+            "price": 3,
+            "category": 12,
+            "rating": 4.8,
+            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/e/e9/Bitterroot_vintage.jpg/revision/latest/scale-to-width-down/483?cb=20201117030219",
+            "image": "Bitterroot_vintage.jpg"
+        }
+    }
+]

@@ -1,0 +1,89 @@
+[{
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "swords",
+            "friendly_name": "Swords"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "daggers",
+            "friendly_name": "Daggers"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "pikes_maces",
+            "friendly_name": "Pikes and Maces"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "bows",
+            "friendly_name": "Bows and Crossbows"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.category",
+        "fields": {
+            "name": "cloth",
+            "friendly_name": "Cloth Armour"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.category",
+        "fields": {
+            "name": "leather",
+            "friendly_name": "Leather Armour"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.category",
+        "fields": {
+            "name": "chain",
+            "friendly_name": "Chain Armour"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.category",
+        "fields": {
+            "name": "steel",
+            "friendly_name": "Steel Armour"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.category",
+        "fields": {
+            "name": "food",
+            "friendly_name": "Food"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.category",
+        "fields": {
+            "name": "potions",
+            "friendly_name": "Potions"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.category",
+        "fields": {
+            "name": "healing",
+            "friendly_name": "Healing"
+        }
+    }
+]

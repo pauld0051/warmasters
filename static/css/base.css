@@ -50,12 +50,16 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #b71c1c;
     color: white;
 }
 
 .text-black {
     color: #000 !important;
+}
+
+.text-yellow {
+    color: #ffea00 !important;
 }
 
 .border-black {
