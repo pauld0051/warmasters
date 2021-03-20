@@ -9,7 +9,8 @@
             "category": 1,
             "rating": 4.6,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/7/73/Shortsword-European.jpg/revision/latest/scale-to-width-down/170?cb=20100503210002",
-            "image": "Shortsword-European.jpg"
+            "image": "Shortsword-European.jpg",
+            "size": 33
         }
     },
     {
@@ -23,7 +24,8 @@
             "category": 1,
             "rating": 4.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/3/34/Longsword.png/revision/latest/scale-to-width-down/146?cb=20200624112909",
-            "image": "Longsword.jpg"
+            "image": "Longsword.jpg",
+            "size": 56
         }
     },
     {
@@ -37,7 +39,8 @@
             "category": 1,
             "rating": 5.0,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/d/df/Albruin.jpg/revision/latest/scale-to-width-down/400?cb=20181114011642",
-            "image": "Albruin.jpg"
+            "image": "Albruin.jpg",
+            "size": 42
         }
     },
     {
@@ -51,7 +54,8 @@
             "category": 2,
             "rating": 4.9,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/9/9f/Whetstone.png/revision/latest/scale-to-width-down/181?cb=20190620164513",
-            "image": "Whetstone.jpg"
+            "image": "Whetstone.jpg",
+            "size": 16
         }
     },
     {
@@ -65,7 +69,8 @@
             "category": 2,
             "rating": 5.0,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/SpiderFang.png/revision/latest/scale-to-width-down/270?cb=20200710165801",
-            "image": "SpiderFang.jpg"
+            "image": "SpiderFang.jpg",
+            "size": 17
         }
     },
     {
@@ -79,7 +84,8 @@
             "category": 4,
             "rating": 3.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/0/06/Light-mace1.jpg/revision/latest/scale-to-width-down/1000?cb=20111012051505",
-            "image": "Light-mace1.jpg"
+            "image": "Light-mace1.jpg",
+            "size": 21
         }
     },
     {
@@ -88,7 +94,7 @@
         "fields": {
             "sku": "pik1",
             "name": "Pike",
-            "description": "Pole weapon used to prevent any attackers from getting in close. Suitable for knights and warriors guarding towers and castles",
+            "description": "Pole weapon used to prevent any attackers from getting in close. Suitable for knights and warriors guarding towers and castles. Must be carried",
             "price": 9,
             "category": 4,
             "rating": 3.4,
@@ -107,7 +113,8 @@
             "category": 5,
             "rating": 4.2,
             "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Yumi-p1000624.jpg/800px-Yumi-p1000624.jpg",
-            "image": "800px-Yumi-p1000624.jpg"
+            "image": "800px-Yumi-p1000624.jpg",
+            "size": 14
         }
     },
     {
@@ -121,7 +128,8 @@
             "category": 5,
             "rating": 4.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/a/a6/Longbow2e.png/revision/latest/scale-to-width-down/314?cb=20200521023814",
-            "image": "Longbow2e.jpg"
+            "image": "Longbow2e.jpg",
+            "size": 19
         }
     },
     {
@@ -135,7 +143,8 @@
             "category": 5,
             "rating": 5.0,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/0/0c/Crossbow_Bolts2e.png/revision/latest/scale-to-width-down/763?cb=20200521022723",
-            "image": "Crossbow_Bolts2e.jpg"
+            "image": "Crossbow_Bolts2e.jpg",
+            "size": 28
         }
     },
     {
@@ -149,7 +158,8 @@
             "category": 5,
             "rating": 4.8,
             "image_url": "http://4.bp.blogspot.com/-gt6Xj7DzvQA/VmMn3dM96TI/AAAAAAAAIhg/r1MIjIrB9xk/s320/UC3105lg.jpg",
-            "image": "800px-Yumi-p1000624.jpg"
+            "image": "800px-Yumi-p1000624.jpg",
+            "size": 10
         }
     },
     {
@@ -163,7 +173,8 @@
             "category": 5,
             "rating": 4.8,
             "image_url": "http://4.bp.blogspot.com/-gt6Xj7DzvQA/VmMn3dM96TI/AAAAAAAAIhg/r1MIjIrB9xk/s320/UC3105lg.jpg",
-            "image": "800px-Yumi-p1000624.jpg"
+            "image": "800px-Yumi-p1000624.jpg",
+            "size": 10
         }
     },
     {
@@ -177,7 +188,8 @@
             "category": 5,
             "rating": 5.0,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/e/e5/Bolts.png/revision/latest/scale-to-width-down/222?cb=20180925215109",
-            "image": "Bolts.jpg"
+            "image": "Bolts.jpg",
+            "size": 10
         }
     },
     {
@@ -275,7 +287,8 @@
             "category": 10,
             "rating": 3.0,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
-            "image": "Crackers-2e.jpg"
+            "image": "Crackers-2e.jpg",
+            "size": 1
         }
     },
     {
@@ -289,7 +302,8 @@
             "category": 10,
             "rating": 3.6,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
-            "image": "Crackers-2e.jpg"
+            "image": "Crackers-2e.jpg",
+            "size": 9
         }
     },
     {
@@ -303,7 +317,8 @@
             "category": 10,
             "rating": 3.9,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
-            "image": "Crackers-2e.jpg"
+            "image": "Crackers-2e.jpg",
+            "size": 10
         }
     },
     {
@@ -317,7 +332,8 @@
             "category": 11,
             "rating": 4.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/2/22/Fire_resistance_bg3.png/revision/latest/scale-to-width-down/256?cb=20210312005330",
-            "image": "Fire_resistance_bg3.jpg"
+            "image": "Fire_resistance_bg3.jpg",
+            "size": 1
         }
     },
     {
@@ -331,35 +347,52 @@
             "category": 11,
             "rating": 4.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/7/79/Potion_of_speed_5e.png/revision/latest/scale-to-width-down/374?cb=20210302032548",
-            "image": "Potion_of_speed_5e.jpg"
+            "image": "Potion_of_speed_5e.jpg",
+            "size": 1
         }
     },
     {
         "pk": 25,
         "model": "products.product",
         "fields": {
-            "sku": "pot2",
+            "sku": "pot3",
             "name": "Potion of Healing",
             "description": "Fix your aches and pains and even wounds, return your health within minutes.",
             "price": 19,
             "category": 11,
             "rating": 4.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/d/d9/Potion_of_healing-5e.jpg/revision/latest/scale-to-width-down/163?cb=20200512233142",
-            "image": "Potion_of_healing-5e.jpg"
+            "image": "Potion_of_healing-5e.jpg",
+            "size": 1
         }
     },
     {
         "pk": 26,
         "model": "products.product",
         "fields": {
-            "sku": "pot2",
+            "sku": "pot4",
             "name": "Healing",
             "description": "Return your strength after battle",
             "price": 3,
             "category": 12,
             "rating": 4.8,
             "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/e/e9/Bitterroot_vintage.jpg/revision/latest/scale-to-width-down/483?cb=20201117030219",
-            "image": "Bitterroot_vintage.jpg"
+            "image": "Bitterroot_vintage.jpg",
+            "size": 1
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "sto1",
+            "name": "Backpack",
+            "description": "Add storage + 20. Can hold many items, including weapons.",
+            "price": 20,
+            "category": 6,
+            "rating": 1.0,
+            "image_url": "https://pm1.narvii.com/6883/bf5a3a3ede3603f719c0f8545f0eda00ee31b2b5r1-2048-1505v2_hq.jpg",
+            "image": "Backpack3.5e.jpg"
         }
     }
 ]
