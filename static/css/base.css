@@ -122,11 +122,19 @@ a.category-badge>span.badge:hover {
 }
 
 .modal-bg-head {
-    background: url('/media/modal-head-bg.jpg');
+    background: url('/media/modal-head-bg.jpg') no-repeat;
 }
 
 .modal-bg-foot {
     background: url('/media/modal-foot-bg.jpg');
+}
+
+.modal-product-foot {
+    background: url('/media/modal-footer-product-bg.jpg') no-repeat center;
+}
+
+.modal-product-head {
+    background: url('/media/modal-header-product-bg.jpg') no-repeat center;
 }
 
 

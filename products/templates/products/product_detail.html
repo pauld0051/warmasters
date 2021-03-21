@@ -43,8 +43,9 @@
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header text-center">
-                <h5 class="modal-title w-100 glow font-weight-bold">{{ product.name }}</h5>
+            <div class="modal-header modal-product-head text-center">
+                <h5 class="modal-title product-title modal-product-head w-100 glow font-weight-bold">{{ product.name }}
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -52,7 +53,7 @@
             <div class="modal-body">
                 <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer modal-product-foot">
                 <span class="lead mb-0 mr-auto text-black">${{ product.price }}</span>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
