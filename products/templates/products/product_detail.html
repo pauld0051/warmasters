@@ -16,7 +16,7 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
+                <a data-toggle="modal" data-target="#modal">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
                 {% else %}
@@ -40,4 +40,25 @@
         </div>
     </div>
 </div>
+<!-- Display Modals -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title w-100 glow font-weight-bold">{{ product.name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+            <div class="modal-footer">
+                <span class="lead mb-0 mr-auto text-black">${{ product.price }}</span>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

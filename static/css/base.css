@@ -40,13 +40,13 @@ body {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: #4e342e;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #4e342e;
+    z-index: -1;
 }
 
 .btn-black {
@@ -88,6 +88,14 @@ body {
     border: 1px solid black !important;
 }
 
+.hr-color {
+    border-color: #dce775;
+}
+
+.glow {
+    text-shadow: 0 0 14px #b71c1c;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -116,12 +124,13 @@ body {
     }
 }
 
+
 /* pad the top a bit when navbar is collapsed on mobile */
+
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;
     }
-
     body {
         height: calc(100vh - 116px);
     }
