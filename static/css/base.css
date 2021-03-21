@@ -101,6 +101,10 @@ a.category-badge>span.badge:hover {
     color: #bdbdbd !important;
 }
 
+.text-lime {
+    color: #c6ff00 !important;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
@@ -111,6 +115,18 @@ a.category-badge>span.badge:hover {
 
 .glow {
     text-shadow: 0 0 14px #b71c1c;
+}
+
+.glow-2 {
+    text-shadow: 0 0 14px #dce775;
+}
+
+.modal-bg-head {
+    background: url('/media/modal-head-bg.jpg');
+}
+
+.modal-bg-foot {
+    background: url('/media/modal-foot-bg.jpg');
 }
 
 
