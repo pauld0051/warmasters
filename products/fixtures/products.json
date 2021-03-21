@@ -8,9 +8,9 @@
             "price": 2,
             "category": 1,
             "rating": 4.6,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/7/73/Shortsword-European.jpg/revision/latest/scale-to-width-down/170?cb=20100503210002",
-            "image": "Shortsword-European.jpg",
-            "size": 33
+            "image": "short-sword.jpg",
+            "size": 33,
+            "weight": 18 
         }
     },
     {
@@ -23,9 +23,9 @@
             "price": 5,
             "category": 1,
             "rating": 4.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/3/34/Longsword.png/revision/latest/scale-to-width-down/146?cb=20200624112909",
-            "image": "Longsword.jpg",
-            "size": 56
+            "image": "longsword.jpg",
+            "size": 56,
+            "weight": 33
         }
     },
     {
@@ -38,9 +38,9 @@
             "price": 12,
             "category": 1,
             "rating": 5.0,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/d/df/Albruin.jpg/revision/latest/scale-to-width-down/400?cb=20181114011642",
-            "image": "Albruin.jpg",
-            "size": 42
+            "image": "albruin.jpg",
+            "size": 42,
+            "weight": 28
         }
     },
     {
@@ -53,9 +53,9 @@
             "price": 6,
             "category": 2,
             "rating": 4.9,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/9/9f/Whetstone.png/revision/latest/scale-to-width-down/181?cb=20190620164513",
-            "image": "Whetstone.jpg",
-            "size": 16
+            "image": "whetstone.jpg",
+            "size": 16,
+            "weight": 7
         }
     },
     {
@@ -68,9 +68,9 @@
             "price": 11,
             "category": 2,
             "rating": 5.0,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/SpiderFang.png/revision/latest/scale-to-width-down/270?cb=20200710165801",
-            "image": "SpiderFang.jpg",
-            "size": 17
+            "image": "mystique-dagger.jpg",
+            "size": 17,
+            "weight": 4
         }
     },
     {
@@ -83,9 +83,9 @@
             "price": 4,
             "category": 4,
             "rating": 3.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/0/06/Light-mace1.jpg/revision/latest/scale-to-width-down/1000?cb=20111012051505",
-            "image": "Light-mace1.jpg",
-            "size": 21
+            "image": "light-mace.jpg",
+            "size": 21,
+            "weight": 9
         }
     },
     {
@@ -98,8 +98,8 @@
             "price": 9,
             "category": 4,
             "rating": 3.4,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/3/3a/Halberd1.jpg/revision/latest/scale-to-width-down/1000?cb=20111006023306",
-            "image": "Halberd1.jpg"
+            "image": "halberd.jpg",
+            "weight": 44
         }
     },
     {
@@ -112,9 +112,9 @@
             "price": 11,
             "category": 5,
             "rating": 4.2,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Yumi-p1000624.jpg/800px-Yumi-p1000624.jpg",
-            "image": "800px-Yumi-p1000624.jpg",
-            "size": 14
+            "image": "short-bow.jpg",
+            "size": 14,
+            "weight": 3
         }
     },
     {
@@ -127,9 +127,9 @@
             "price": 21,
             "category": 5,
             "rating": 4.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/a/a6/Longbow2e.png/revision/latest/scale-to-width-down/314?cb=20200521023814",
-            "image": "Longbow2e.jpg",
-            "size": 19
+            "image": "longbow2e.jpg",
+            "size": 19,
+            "weight": 7
         }
     },
     {
@@ -142,9 +142,9 @@
             "price": 29,
             "category": 5,
             "rating": 5.0,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/0/0c/Crossbow_Bolts2e.png/revision/latest/scale-to-width-down/763?cb=20200521022723",
-            "image": "Crossbow_Bolts2e.jpg",
-            "size": 28
+            "image": "crossbow.jpg",
+            "size": 28,
+            "weight": 17
         }
     },
     {
@@ -153,13 +153,13 @@
         "fields": {
             "sku": "aro1",
             "name": "Short Bow Arrows",
-            "description": "15 steel tipped arrows",
+            "description": "15 steel tipped shortbow arrows in quiver.",
             "price": 5,
             "category": 5,
             "rating": 4.8,
-            "image_url": "http://4.bp.blogspot.com/-gt6Xj7DzvQA/VmMn3dM96TI/AAAAAAAAIhg/r1MIjIrB9xk/s320/UC3105lg.jpg",
-            "image": "800px-Yumi-p1000624.jpg",
-            "size": 10
+            "image": "shortbow-arrows.jpg",
+            "size": 10,
+            "weight": 2
         }
     },
     {
@@ -168,13 +168,13 @@
         "fields": {
             "sku": "aro2",
             "name": "Long Bow Arrows",
-            "description": "15 steel tipped arrows",
+            "description": "15 steel tipped longbow arrows in quiver.",
             "price": 5,
             "category": 5,
             "rating": 4.8,
-            "image_url": "http://4.bp.blogspot.com/-gt6Xj7DzvQA/VmMn3dM96TI/AAAAAAAAIhg/r1MIjIrB9xk/s320/UC3105lg.jpg",
-            "image": "800px-Yumi-p1000624.jpg",
-            "size": 10
+            "image": "longbow-arrows.jpg",
+            "size": 10,
+            "weight": 3
         }
     },
     {
@@ -183,13 +183,13 @@
         "fields": {
             "sku": "bol1",
             "name": "Crossbow Bolts",
-            "description": "Bolts for your crossbow",
+            "description": "15 bolts for your crossbow.",
             "price": 10,
             "category": 5,
             "rating": 5.0,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/e/e5/Bolts.png/revision/latest/scale-to-width-down/222?cb=20180925215109",
             "image": "Bolts.jpg",
-            "size": 10
+            "size": 10,
+            "weight": 6
         }
     },
     {
@@ -202,8 +202,8 @@
             "price": 1,
             "category": 6,
             "rating": 1.0,
-            "image_url": "https://pm1.narvii.com/6883/bf5a3a3ede3603f719c0f8545f0eda00ee31b2b5r1-2048-1505v2_hq.jpg",
-            "image": "clothes.jpg"
+            "image": "clothes.jpg",
+            "weight": 1
         }
     },
     {
@@ -212,12 +212,12 @@
         "fields": {
             "sku": "clo2",
             "name": "Heal Cloth",
-            "description": "Offers no protection but aides in healing. Allows for quiet and stealthy movement",
+            "description": "Offers no protection but aides in healing. Allows for quiet and stealthy movement.",
             "price": 11,
             "category": 6,
             "rating": 4.0,
-            "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/159655e5-0c15-4841-acc0-d4f8654a65de/d627ipi-35adaade-c615-4267-836b-a91bcc8688d9.jpg/v1/fill/w_600,h_631,q_75,strp/gazeraz_mage___concept_by_mizaeltengu_d627ipi-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD02MzEiLCJwYXRoIjoiXC9mXC8xNTk2NTVlNS0wYzE1LTQ4NDEtYWNjMC1kNGY4NjU0YTY1ZGVcL2Q2MjdpcGktMzVhZGFhZGUtYzYxNS00MjY3LTgzNmItYTkxYmNjODY4OGQ5LmpwZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.DD9MyvZVo1jQoCLla3dqaz8THqN3kPGbO4aM98x9z7M",
-            "image": "healcloth.jpg"
+            "image": "healcloth.jpg",
+            "weight": 2
         }
     },
     {
@@ -226,12 +226,12 @@
         "fields": {
             "sku": "lea1",
             "name": "Leather Armour",
-            "description": "Offers limited protection but is light and aides movement",
+            "description": "Offers limited protection but is light and aides movement.",
             "price": 7,
             "category": 7,
             "rating": 2.9,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/b/b2/Leather.jpg/revision/latest/scale-to-width-down/265?cb=20151019005254",
-            "image": "Leather.jpg"
+            "image": "leather.jpg",
+            "weight": 5
         }
     },
     {
@@ -244,8 +244,8 @@
             "price": 23,
             "category": 9,
             "rating": 4.9,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/a/a5/Scale.jpg/revision/latest/scale-to-width-down/265?cb=20151019005255",
-            "image": "Scale.jpg"
+            "image": "steel-scale.jpg",
+            "weight": 16
         }
     },
     {
@@ -258,8 +258,8 @@
             "price": 18,
             "category": 8,
             "rating": 4.3,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/c/ca/Chain_shirt-5e.jpg/revision/latest/scale-to-width-down/639?cb=20191009042405",
-            "image": "Chain_shirt-5e.jpg"
+            "image": "chainmail.jpg",
+            "weight": 25
         }
     },
     {
@@ -272,8 +272,8 @@
             "price": 11,
             "category": 7,
             "rating": 4.4,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/8/85/StuddedLeather-5e.png/revision/latest/scale-to-width-down/645?cb=20200628135121",
-            "image": "StuddedLeather-5e.jpg"
+            "image": "studded-leather.jpg",
+            "weight": 9
         }
     },
     {
@@ -286,8 +286,7 @@
             "price": 1,
             "category": 10,
             "rating": 3.0,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
-            "image": "Crackers-2e.jpg",
+            "image": "food-portion.jpg",
             "size": 3
         }
     },
@@ -301,8 +300,7 @@
             "price": 2,
             "category": 10,
             "rating": 3.6,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
-            "image": "Crackers-2e.jpg",
+            "image": "food-portion.jpg",
             "size": 9
         }
     },
@@ -316,8 +314,7 @@
             "price": 3,
             "category": 10,
             "rating": 3.9,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5c/Crackers-2e.jpg/revision/latest/scale-to-width-down/336?cb=20190430231622",
-            "image": "Crackers-2e.jpg",
+            "image": "food-portion.jpg",
             "size": 15
         }
     },
@@ -327,13 +324,13 @@
         "fields": {
             "sku": "pot1",
             "name": "Potion of Fire Resistance",
-            "description": "Lower your risk of being exposed to fire magic and spells. Including dragon breath",
+            "description": "Lower your risk of being exposed to fire magic and spells. Including dragon breath.",
             "price": 19,
             "category": 11,
             "rating": 4.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/2/22/Fire_resistance_bg3.png/revision/latest/scale-to-width-down/256?cb=20210312005330",
-            "image": "Fire_resistance_bg3.jpg",
-            "size": 1
+            "image": "fire_resistance.jpg",
+            "size": 1,
+            "weight": 1
         }
     },
     {
@@ -346,9 +343,9 @@
             "price": 19,
             "category": 11,
             "rating": 4.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/7/79/Potion_of_speed_5e.png/revision/latest/scale-to-width-down/374?cb=20210302032548",
-            "image": "Potion_of_speed_5e.jpg",
-            "size": 1
+            "image": "speed-potion.jpg",
+            "size": 1,
+            "weight": 1
         }
     },
     {
@@ -361,9 +358,9 @@
             "price": 19,
             "category": 11,
             "rating": 4.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/d/d9/Potion_of_healing-5e.jpg/revision/latest/scale-to-width-down/163?cb=20200512233142",
-            "image": "Potion_of_healing-5e.jpg",
-            "size": 1
+            "image": "healing-potion.jpg",
+            "size": 1,
+            "weight": 1
         }
     },
     {
@@ -376,9 +373,9 @@
             "price": 3,
             "category": 12,
             "rating": 4.8,
-            "image_url": "https://static.wikia.nocookie.net/forgottenrealms/images/e/e9/Bitterroot_vintage.jpg/revision/latest/scale-to-width-down/483?cb=20201117030219",
-            "image": "Bitterroot_vintage.jpg",
-            "size": 1
+            "image": "heal-root.jpg",
+            "size": 1,
+            "weight": 1
         }
     },
     {
@@ -391,8 +388,8 @@
             "price": 20,
             "category": 6,
             "rating": 1.0,
-            "image_url": "https://pm1.narvii.com/6883/bf5a3a3ede3603f719c0f8545f0eda00ee31b2b5r1-2048-1505v2_hq.jpg",
-            "image": "Backpack3.5e.jpg"
+            "image": "backpack.jpg",
+            "weight": 3
         }
     }
 ]
