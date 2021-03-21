@@ -386,7 +386,7 @@
             "name": "Backpack",
             "description": "Add storage + 20. Can hold many items, including weapons.",
             "price": 20,
-            "category": 6,
+            "category": 13,
             "rating": 1.0,
             "image": "backpack.jpg",
             "weight": 3

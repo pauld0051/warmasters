@@ -17,11 +17,12 @@
                 Weaponry
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="steel-weapons">
-                <a href="" class="dropdown-item">Swords</a>
-                <a href="" class="dropdown-item">Daggers</a>
-                <a href="" class="dropdown-item disabled">Knives (coming soon)</a>
-                <a href="" class="dropdown-item">Pikes &amp; Maces</a>
-                <a href="" class="dropdown-item">Bows &amp; Crossbows</a>
+                <a href="{% url 'products' %}?category=swords" class=" dropdown-item">Swords</a>
+                <a href="{% url 'products' %}?category=daggers" class=" dropdown-item">Daggers</a>
+                <a href="{% url 'products' %}?category=knives" class=" dropdown-item disabled">Knives (coming soon)</a>
+                <a href="{% url 'products' %}?category=pikes_maces" class=" dropdown-item">Pikes &amp; Maces</a>
+                <a href="{% url 'products' %}?category=bows,crossbows" class=" dropdown-item">Bows &amp; Crossbows</a>
+                <a href="{% url 'products' %}?category=swords,daggers,knives,pikes_maces,bows,crossbows" class=" dropdown-item">All Weaponry</a>
             </div>
         </li>
 
@@ -30,10 +31,12 @@
                 Armour &amp; Backpacks
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="armour">
-                <a href="" class="dropdown-item">Cloth</a>
-                <a href="" class="dropdown-item">Leather</a>
-                <a href="" class="dropdown-item">Chain</a>
-                <a href="" class="dropdown-item">Steel</a>
+                <a href="{% url 'products' %}?category=cloth" class="dropdown-item">Cloth</a>
+                <a href="{% url 'products' %}?category=leather" class="dropdown-item">Leather</a>
+                <a href="{% url 'products' %}?category=chain" class="dropdown-item">Chain</a>
+                <a href="{% url 'products' %}?category=steel" class="dropdown-item">Steel</a>
+                <a href="{% url 'products' %}?category=backpack" class="dropdown-item">Backpacks</a>
+                <a href="{% url 'products' %}?category=cloth,leather,chain,steel,backpack" class="dropdown-item">All Armour</a>
             </div>
         </li>
 
@@ -42,9 +45,10 @@
                 Food &amp; Potions
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="food-potions">
-                <a href="" class="dropdown-item">Food</a>
-                <a href="" class="dropdown-item">Potions</a>
-                <a href="" class="dropdown-item">Healing</a>
+                <a href="{% url 'products' %}?category=food" class="dropdown-item">Food</a>
+                <a href="{% url 'products' %}?category=potions" class="dropdown-item">Potions</a>
+                <a href="{% url 'products' %}?category=healing" class="dropdown-item">Healing</a>
+                <a href="{% url 'products' %}?category=food,potions,healing" class="dropdown-item">All Food and Potions</a>
             </div>
         </li>
     </ul>
