@@ -73,7 +73,15 @@ body {
 }
 
 .text-white {
-    color: #fff;
+    color: #fff !important;
+}
+
+.text-lgt-gray {
+    color: #e0e0e0 !important;
+}
+
+.text-med-gray {
+    color: #bdbdbd !important;
 }
 
 .border-black {
@@ -105,5 +113,16 @@ body {
     }
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
