@@ -49,6 +49,11 @@ body {
     z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
 .btn-black {
     background: black;
     color: white;
