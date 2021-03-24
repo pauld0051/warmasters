@@ -18,10 +18,14 @@
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <div class="dropdown-divider"></div>
+                <a href="{% url 'products' %}?category=gold" class="dropdown-item">Gold</a>
+                <a href="{% url 'products' %}?category=enchantments" class="dropdown-item">Enchantments</a>
+                <a href="{% url 'products' %}?category=gold,enchantments" class="dropdown-item">All Game Exps</a>
+                <div class="dropdown-divider"></div>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
-
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="steel-weapons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Weaponry
@@ -29,13 +33,12 @@
             <div class="dropdown-menu border-0" aria-labelledby="steel-weapons">
                 <a href="{% url 'products' %}?category=swords" class=" dropdown-item">Swords</a>
                 <a href="{% url 'products' %}?category=daggers" class=" dropdown-item">Daggers</a>
-                <a href="{% url 'products' %}?category=knives" class=" dropdown-item disabled">Knives (coming soon)</a>
+                <a href="{% url 'products' %}?category=knives" class=" dropdown-item">Knives</a>
                 <a href="{% url 'products' %}?category=pikes_maces" class=" dropdown-item">Pikes &amp; Maces</a>
                 <a href="{% url 'products' %}?category=bows,crossbows" class=" dropdown-item">Bows &amp; Crossbows</a>
                 <a href="{% url 'products' %}?category=swords,daggers,knives,pikes_maces,bows,crossbows" class=" dropdown-item">All Weaponry</a>
             </div>
         </li>
-
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="armour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Armour &amp; Backpacks
@@ -49,7 +52,6 @@
                 <a href="{% url 'products' %}?category=cloth,leather,chain,steel,backpack" class="dropdown-item">All Armour</a>
             </div>
         </li>
-
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="food-potions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Food &amp; Potions

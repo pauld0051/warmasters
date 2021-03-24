@@ -71,6 +71,19 @@ a.category-badge>span.badge:hover {
     color: white;
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
 .war-now-button:hover,
 .war-now-button:active,
 .war-now-button:focus,
@@ -103,6 +116,10 @@ a.category-badge>span.badge:hover {
 
 .text-lime {
     color: #c6ff00 !important;
+}
+
+.text-red {
+    color: #b71c1c;
 }
 
 .border-black {
