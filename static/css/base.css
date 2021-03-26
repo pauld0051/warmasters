@@ -10,9 +10,6 @@ body {
     font-family: 'MedievalSharp';
 }
 
-
-/* from Bulma */
-
 .icon {
     align-items: center;
     display: inline-flex;
@@ -75,7 +72,8 @@ a.category-badge>span.badge:hover {
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
+    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -156,22 +154,33 @@ a.category-badge>span.badge:hover {
     background: url('/media/modal-header-product-bg.jpg') no-repeat center;
 }
 
+.toast-bg-head {
+    background: url('/media/toast-header-bg.jpg') no-repeat center;
+}
+
 .img-size-sm {
     width: 128px;
 }
 
+
 /* Hide number input spinners - https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+
+
 /* Chrome, Safari, Edge, Opera */
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
+
 /* Firefox */
+
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
+
 
 /* ------------------------------- bootstrap toasts */
 
@@ -190,19 +199,23 @@ input[type=number] {
     height: 2px;
 }
 
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
     right: 36px;
 }
 
+
 /* Convenience classes - colors copied from Bootstrap */
+
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -240,6 +253,7 @@ input[type=number] {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
 
 /* -------------------------------- Media Queries */
 

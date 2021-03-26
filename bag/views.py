@@ -21,9 +21,14 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
-        bag[item_id] += quantity
-        messages.success(
-            request, f'Updated {product.name} quantity to {bag[item_id]}')
+        if bag[item_id] >= 99 or (bag[item_id] + quantity) >= 99:
+            bag[item_id] = 99
+            messages.error(
+                request, f"Updated {product.name} to 99, the maximum you're allowed to purchase")
+        else:
+            bag[item_id] += quantity
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
         messages.success(request, f'Added {product.name} to your bag')
@@ -39,7 +44,11 @@ def adjust_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
-    if quantity > 0:
+    if quantity > 99:
+        bag[item_id] = 99
+        messages.error(
+            request, f"Updated {product.name} to 99, the maximum you're allowed to purchase")
+    elif quantity > 0 and quantity < 100:
         bag[item_id] = quantity
         messages.success(
             request, f'Updated {product.name} quantity to {bag[item_id]}')

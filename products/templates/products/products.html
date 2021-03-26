@@ -111,7 +111,7 @@
 </div>
 </div>
 <div class="btt-button shadow-sm rounded-0 border border-black">
-    <a class="btt-link d-flex h-100">
+    <a class="btt-link d-flex h-100" data-toggle="popover" data-content="To the top">
         <i class="fas fa-arrow-up text-white mx-auto my-auto"></i>
     </a>
 </div>
@@ -119,6 +119,9 @@
 <script type="text/javascript">
     $('.btt-link').click(function(e) {
         window.scrollTo(0, 0)
+    })
+    $(function () {
+    $('[data-toggle="popover"]').popover({trigger: "hover"})
     })
 </script>
 
