@@ -26,7 +26,7 @@
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
+                            <th scope="col" class="text-right">Subtotal</th>
                         </tr>
                     </thead>
 
@@ -42,17 +42,11 @@
                         <td class="py-3">
                             <p class="my-0 text-lime">${{ item.product.price }}</p>
                         </td>
-                        <td class="py-3 w-25 text-lime">
-                            <p class="my-0">{{ item.quantity }}</p>
-                        </td>
-                        <td class="py-3">
-                            <p class="my-0 text-lime">${{ item.product.price }}</p>
-                        </td>
                         <td class="py-3 w-25">
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <div class="input-group-sm">
+                                    <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <span>
@@ -74,7 +68,7 @@
                             <a class="update-link text-info text-lgt-gray"><small>Update</small></a>
                             <a class="remove-item text-info float-right text-lgt-gray" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                         </td>
-                        <td class="py-3">
+                        <td class="py-3 text-right">
                             <p class="my-0 text-yellow">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
@@ -124,13 +118,13 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function (e) {
+    $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function (e) {
+    $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
@@ -139,7 +133,7 @@
         };
 
         $.post(url, data)
-            .done(function () {
+            .done(function() {
                 location.reload();
             });
     })
