@@ -80,7 +80,7 @@ a.category-badge>span.badge:hover {
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: #b71c1c;
     color: white !important;
 }
 
@@ -154,6 +154,22 @@ a.category-badge>span.badge:hover {
     background: url('/media/modal-header-product-bg.jpg') no-repeat center;
 }
 
+.img-size-sm {
+    width: 128px;
+}
+
+/* Hide number input spinners - https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* -------------------------------- Media Queries */
 
