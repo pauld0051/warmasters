@@ -38,7 +38,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(
-                    request, "You didn't enter any search criteria!")
+                    request, "The clairvoyant search function is coming, but for now you need to enter your search criteria.")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
