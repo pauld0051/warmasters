@@ -3,5 +3,30 @@
         "WARMASTERS"
     ],
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "cSpell.enableFiletypes": [
+        "jinja",
+        "jinja-cpp",
+        "jinja-css",
+        "jinja-dockerfile",
+        "jinja-groovy",
+        "jinja-html",
+        "jinja-java",
+        "jinja-js",
+        "jinja-json",
+        "jinja-latex",
+        "jinja-lua",
+        "jinja-md",
+        "jinja-nginx",
+        "jinja-properties",
+        "jinja-py",
+        "jinja-rb",
+        "jinja-shell",
+        "jinja-sql",
+        "jinja-systemd",
+        "jinja-terraform",
+        "jinja-toml",
+        "jinja-xml",
+        "jinja-yaml"
+    ]
 }
