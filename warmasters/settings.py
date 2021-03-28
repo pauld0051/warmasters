@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["b136a49df83b.ngrok.io"]
 
 
 # Application definition
@@ -188,3 +188,4 @@ FREE_GIFT_THRESHOLD = 50
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '') 
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
