@@ -40,6 +40,7 @@ def checkout(request):
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
+            'country': request.POST['country'],
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
