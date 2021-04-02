@@ -32,7 +32,6 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
-        print(billing_details)
         order_exists = False
         attempt = 1
         while attempt <= 5:
