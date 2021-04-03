@@ -41,11 +41,13 @@
                             <th>Order Number</th>
                             <th>Date</th>
                             <th>Items</th>
+                            <th>Qty</th>
                             <th>Order Total</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for order in orders %}
+                         {% for item in order.lineitems.all %}
                         <tr class="text-med-gray">
                             <td>
                                 <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
@@ -55,15 +57,19 @@
                             <td>{{ order.date }}</td>
                             <td>
                                 <ul class="list-unstyled">
-                                    {% for item in order.lineitems.all %}
                                     <li class="small">
-                                        {% if item.product.has_sizes %}
-                                        Size {{ item.product.size|upper }}
-                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                        {{ item.product.name }}
                                     </li>
-                                    {% endfor %}
                                 </ul>
                             </td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    <li class="small">
+                                        {{ item.quantity }}
+                                    </li> 
+                                </ul> 
+                            </td>
+                             {% endfor %}
                             <td>${{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
