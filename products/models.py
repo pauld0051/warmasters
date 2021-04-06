@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
@@ -24,7 +26,8 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=6, decimal_places=2)
     rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
+        max_digits=6, decimal_places=2, null=True, blank=True,
+        validators=[MaxValueValidator(5.0, message=None), MinValueValidator(0.0, message=None)])
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     size = models.PositiveIntegerField(null=True, blank=True)
