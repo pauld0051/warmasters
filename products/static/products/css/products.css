@@ -7,7 +7,11 @@
 }
 
 
-input#spinners::-webkit-outer-spin-button,
-input#spinners::-webkit-inner-spin-button {
+input#id_rating::-webkit-outer-spin-button,
+input#id_rating::-webkit-inner-spin-button {
    opacity: 1;
+}
+
+input[type=number]#id_rating {
+    -moz-appearance: numberfield;
 }
