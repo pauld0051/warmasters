@@ -43,8 +43,8 @@
                         {% include "bag/product-info.html" %}
                     </div>
                     <div class="col-12 col-sm-6 order-sm-last">
-                        <p class="my-0 text-lgt-lime">Price Each: ${{ item.product.price }}</p>
-                        <p class="text-lgt-yellow"><strong>Subtotal:
+                        <p class="my-0 text-lime">Price Each: ${{ item.product.price }}</p>
+                        <p class="text-yellow"><strong>Subtotal:
                             </strong>${{ item.product.price | calc_subtotal:item.quantity }}</p>
                     </div>
                     <div class="col-12 col-sm-6">
