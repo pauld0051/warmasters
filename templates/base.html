@@ -7,10 +7,10 @@
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> 
-    {% endblock %} 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {% endblock %}
 
-    {% block extra_meta %} 
+    {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
@@ -25,8 +25,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <!-- Stripe -->
         <script src="https://js.stripe.com/v3/"></script>
-    {% endblock %} 
-    
+    {% endblock %}
+
     {% block extra_js %}
     {% endblock %}
 
@@ -67,9 +67,9 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %} 
+                            {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a> 
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                             {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a> {% else %}
@@ -85,9 +85,9 @@
                             <i class="fas fa-shopping-bag fa-lg"></i>
                             </div>
                         <p class="my-0">
-                            {% if grand_total %} ${{ grand_total|floatformat:2 }} 
-                            {%else %} $0.00 
-                            {% endif %}  
+                            {% if grand_total %} ${{ grand_total|floatformat:2 }}
+                            {%else %} $0.00
+                            {% endif %}
                         </p>
                         </div>
                     </a>
@@ -113,25 +113,25 @@
 
     {% if messages %}
     <div class="message-container">
-        {% for message in messages %} 
-        {% with message.level as level %} 
-        {% if level == 40 %} 
-        {% include 'includes/toasts/toast_error.html' %} 
-        {% elif level == 30 %} 
-        {% include 'includes/toasts/toast_warning.html' %} 
-        {% elif level == 25 %} 
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
         {% include 'includes/toasts/toast_success.html'%}
-        {% else %} 
-        {% include 'includes/toasts/toast_info.html' %} 
-        {% endif %} 
-        {% endwith %} 
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
-    {% endif %} 
-    {% block page_header %} 
-    {% endblock %} 
-    {% block content %} 
-    {% endblock %} 
+    {% endif %}
+    {% block page_header %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
     {% block postloadjs %}
     <script type="text/javascript">
         $(".toast").toast("show");

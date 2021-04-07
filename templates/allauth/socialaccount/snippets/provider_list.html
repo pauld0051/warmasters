@@ -1,20 +1,31 @@
 {% load socialaccount %}
 
+{% load static %}
+
 {% get_providers as socialaccount_providers %}
 
 {% for provider in socialaccount_providers %}
 {% if provider.id == "openid" %}
 {% for brand in provider.get_brands %}
 <li>
-  <a title="{{brand.name}}" 
-     class="socialaccount_provider {{provider.id}} {{brand.id}}" 
+  <a title="{{brand.name}}"
+     class="socialaccount_provider {{provider.id}} {{brand.id}}"
      href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
      >{{brand.name}}</a>
 </li>
 {% endfor %}
 {% endif %}
-<li>
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
+
+<li class="list-group-item">
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" id="{{provider.name}}-connect"
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+    <img class="img-fluid social-image-mob rounded mx-auto d-none d-block d-sm-block d-md-none"
+      src="{{MEDIA_URL}}login-{{provider.name}}.png"
+      alt="{{provider.name}}">
+      <img class="img-fluid social-image rounded mx-auto d-none d-md-block"
+        src="{{MEDIA_URL}}login-{{provider.name}}.png" alt="{{provider.name}}">
+    </a>
 </li>
+
+<br>
 {% endfor %}

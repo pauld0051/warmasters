@@ -162,7 +162,6 @@ a.category-badge>span.badge:hover {
     width: 128px;
 }
 
-
 /* Hide number input spinners - https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
 /* Chrome, Safari, Edge, Opera */
 
@@ -353,6 +352,14 @@ input[type=number] {
     .header-container {
         padding-top: 164px;
     }
+}
+
+.social-image {
+    max-width: 210px;
+}
+
+..social-image-mob {
+    max-width: 110px;
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */

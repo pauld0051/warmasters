@@ -10,6 +10,9 @@
 <hr>
 
 <p class="text-lgt-gray">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p class="text-lgt-gray"> Or sign up using your Social Media account or register with an email address.</p>
+
+{% include "socialaccount/snippets/provider_list.html" %}
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
