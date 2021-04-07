@@ -5,3 +5,9 @@
 .text-dk-gray {
     color: #757575;
 }
+
+
+input#spinners::-webkit-outer-spin-button,
+input#spinners::-webkit-inner-spin-button {
+   opacity: 1;
+}
