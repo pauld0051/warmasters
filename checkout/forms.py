@@ -1,3 +1,7 @@
+"""
+Form details for checkout.
+"""
+
 from django import forms
 from .models import Order
 

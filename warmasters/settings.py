@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-import dj_database_url
-
 from pathlib import Path
+
+import dj_database_url
 
 if os.path.exists('env.py'):
     import env
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-
     # Other
     'crispy_forms',
     'storages',
@@ -212,12 +211,12 @@ if 'USE_AWS' in os.environ:
 FREE_GIFT_THRESHOLD = 50
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '') 
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'warmasters616@gmail.com'
 
 
-# Email 
+# Email
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

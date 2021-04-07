@@ -13,5 +13,5 @@ input#id_rating::-webkit-inner-spin-button {
 }
 
 input[type=number]#id_rating {
-    -moz-appearance: numberfield;
+    -moz-appearance: textfield;
 }

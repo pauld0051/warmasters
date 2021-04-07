@@ -1,3 +1,7 @@
+"""
+Set the database fields for user.
+"""
+
 from django.contrib import admin
 from .models import Order, OrderLineItem
 

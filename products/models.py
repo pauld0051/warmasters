@@ -1,6 +1,11 @@
+"""
+Set the form field names and criteria.
+"""
+
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
-from django.utils.translation import gettext_lazy as _
+from django.core.validators import (
+    MaxValueValidator, MinValueValidator
+)
 
 
 class Category(models.Model):

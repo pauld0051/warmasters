@@ -1,7 +1,14 @@
+"""
+Build the admin for product upload.
+"""
+
 from django.contrib import admin
 from .models import Product, Category
 
 
+"""
+Include the list_displays for the admin.
+"""
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',

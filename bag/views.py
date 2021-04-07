@@ -1,4 +1,9 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+"""
+Template variables for the shopping bag.
+"""
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
 
 from products.models import Product
@@ -64,7 +69,7 @@ def remove_from_bag(request, item_id):
     """ Remove the specified product in the shopping bag """
 
     # Intended quantity is zero
-    try:    
+    try:
         product = get_object_or_404(Product, pk=item_id)
         bag = request.session.get('bag', {})
         bag.pop(item_id)

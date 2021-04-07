@@ -1,3 +1,8 @@
+"""
+Build a user profile taking on phone number
+and country of origin.
+"""
+
 from django import forms
 from .models import UserProfile
 

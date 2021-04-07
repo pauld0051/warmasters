@@ -1,4 +1,9 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+"""
+Template views for products.
+"""
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404
+)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -41,7 +46,9 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(
-                    request, "The clairvoyant search function is coming, but for now you need to enter your search criteria.")
+                    request,
+                    "The clairvoyant search function is coming, but for now you need to enter your search criteria."
+                    )
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
@@ -90,7 +97,7 @@ def add_product(request):
                 request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-    
+
     template = 'products/add_product.html'
     context = {
         'form': form,
