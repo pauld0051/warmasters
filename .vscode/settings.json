@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
-        "WARMASTERS"
+        "WARMASTERS",
+        "gameprofile",
+        "lineitems"
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,

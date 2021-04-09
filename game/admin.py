@@ -31,9 +31,12 @@ class GameProfileAdmin(admin.ModelAdmin):
         'bag_size',
         'storage',
         'gold',
+        'bag_items',
+        'storage_items',
     )
 
 
 admin.site.register(Creed, CreedAdmin)
 admin.site.register(Character, CharacterAdmin)
 admin.site.register(GameProfile, GameProfileAdmin)
+

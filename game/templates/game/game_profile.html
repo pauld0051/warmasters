@@ -31,57 +31,60 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                {% for accessory in accessories %}
-                <h2>Gold: {{ accessory.gold }} <i class="fas fa-coins text-yellow"></i></h2>
+
+                {% if gold %}
+                <h2>Gold: {{ gold }} <i class="fas fa-coins text-yellow"></i></h2>
+                {% else %}
+                <h2>Gold: 0 <i class="fas fa-coins text-yellow"></i></h2>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="card mt-2 mr-2 col-lg-3" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-         <div class="card-header">
-             Character
-         </div>
-        <div class="card-body">
-            Character will go here
+    <div class="row">
+        <div class="card mt-2 mr-2 col-lg-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-header">
+                Character
+            </div>
+            <div class="card-body">
+                Character will go here
+            </div>
         </div>
-    </div>
-    <div class="card mt-2 mr-2 col-lg-3" style="width: 18rem;">
-        <img class="card-img-top img-fluid mx-auto" style="max-width: 9rem;" src="{{ MEDIA_URL}}backpack.jpg"
-            alt="Backpack storage">
-        <i class="fas fa-expand-alt text-right mt-1 mb-1" data-toggle="popover"
-            data-content="Buy more bag space with your gold."></i>
-         <div class="card-header">
-             <p>Bag Items</p>
-             <p>Space Remaining: {{ accessory.bag_size }}</p>
-         </div>
-        <div class="card-body">
-            Bag will go here
+        <div class="card mt-2 mr-2 col-lg-3" style="width: 18rem;">
+            <img class="card-img-top img-fluid mx-auto" style="max-width: 9rem;" src="{{ MEDIA_URL}}backpack.jpg"
+                alt="Backpack storage">
+            <i class="fas fa-expand-alt text-right mt-1 mb-1" data-toggle="popover"
+                data-content="Buy more bag space with your gold."></i>
+            <div class="card-header">
+                <p>Bag Items</p>
+                <p>Space Remaining: {{ bag_size }}</p>
+            </div>
+            <div class="card-body">
+            {% for order in orders %}
+            {% for item in order.lineitems.all %}
+                <li class="text-black">
+                    {{ item.product.name }}
+                </li>
+            {% endfor %}
+            {% endfor %}
+            </div>
         </div>
-    </div>
-    <div class="card mt-2 col-lg-3" style="width: 18rem;">
-        <img class="card-img-top img-fluid mx-auto" style="max-width: 9rem;" src="{{ MEDIA_URL}}dungeon-keep.jpg" alt="Dungeon keep storage">
-        <i class="fas fa-expand-alt text-right mt-1 mb-1" data-toggle="popover"
-            data-content="Buy more storage space with your gold."></i>
-         <div class="card-header">
-             <p>Storage Items</p>
-             <p>Space Remaining: {{ accessory.storage }}</p>
-         </div>
-        <div class="card-body">
-            Storage will go here
+        <div class="card mt-2 col-lg-3" style="width: 18rem;">
+            <img class="card-img-top img-fluid mx-auto" style="max-width: 9rem;" src="{{ MEDIA_URL}}dungeon-keep.jpg" alt="Dungeon keep storage">
+            <i class="fas fa-expand-alt text-right mt-1 mb-1" data-toggle="popover"
+                data-content="Buy more storage space with your gold."></i>
+            <div class="card-header">
+                <p>Storage Items</p>
+                <p>Space Remaining: {{ user.gameprofile.storage }}</p>
+            </div>
+            <div class="card-body">
+                Storage will go here
+            </div>
         </div>
     </div>
 </div>
-                {% endfor %} <!-- Accessories Loop -->
-
-{% for order in orders %}
- {% for item in order.lineitems.all %}
-<li class="text-lgt-gray">You got {{ item.product.name }}</li>
-{% endfor %}
-{% endfor %}
-
 {% endblock %}
 
 {% block postloadjs %}

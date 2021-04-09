@@ -20,6 +20,9 @@ class GameProfile(models.Model):
     storage = models.PositiveIntegerField(validators=[MaxValueValidator(
         2000), MinValueValidator(50)], null=True, blank=False)
     gold = models.PositiveIntegerField(null=True, blank=False)
+    bag_items = models.CharField(max_length=254, null=True, blank=True)
+    storage_items = models.CharField(max_length=254, null=True, blank=True)
+
 
     def __str__(self):
         return str(self.user)
@@ -37,3 +40,4 @@ class Character(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
     strength = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
     image = models.ImageField(null=True, blank=True)
+
