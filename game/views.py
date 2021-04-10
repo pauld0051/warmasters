@@ -23,6 +23,7 @@ def game_profile(request):
         storage_size = request.user.gameprofile.storage - total_size
         items = []
         for order in orders:
+            location = order.send_to
             for item in order.lineitems.all():
                 items.append({"name": item.product.name, "qty": item.quantity})
         x = {}

@@ -62,11 +62,7 @@
                 <p>Space Remaining: {{ bag_size }}</p>
             </div>
             <div class="card-body">
-                {% for k, v in item.items %}
-                <li class="text-black">
-                    {{ k }} x {{ v }}
-                </li>
-                {% endfor %}
+                {% include 'game/game_bag.html' %}
             </div>
         </div>
         <div class="card mt-2 col-lg-3" style="width: 18rem;">
@@ -78,7 +74,9 @@
                 <p>Space Remaining: {{ storage_size }}</p>
             </div>
             <div class="card-body">
-                Storage will go here
+                 <div class="card-body">
+                     {% include 'game/game_storage.html' %}
+                 </div>
             </div>
         </div>
     </div>
