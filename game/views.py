@@ -1,3 +1,4 @@
+from collections import defaultdict
 from django.shortcuts import (
     render, get_object_or_404
 )
@@ -23,16 +24,12 @@ def game_profile(request):
         storage_size = request.user.gameprofile.storage - total_size
         trade_size = request.user.gameprofile.storage - total_size
         items = []
+        x = defaultdict(dict)
         for order in orders:
-            location = order.send_to
             for item in order.lineitems.all():
                 items.append({"name": item.product.name, "qty": item.quantity})
-        x = {}
-        for i in items:
-            _key = i['name']
-            _qty = i['qty']
-            x[_key] = x.get(_key, 0) + _qty
-
+                x[order.send_to][item.product.name] = item.quantity
+        print(x)
         template = 'game/game_profile.html'
         context = {
         'profile': profile,
@@ -41,7 +38,7 @@ def game_profile(request):
         'bag_size': bag_size,
         'storage_size': storage_size,
         'accessories': accessories,
-        'item': x,
+        'data': dict(x),
         }
 
     return render(request, template, context)

@@ -1,7 +1,7 @@
+{% for location, dictionary in data.items %}
+{% for key, value in dictionary.items %}
 {% if location == "Storage" %}
-{% for k, v in item.items %}
-<li class="text-black">
-    {{ k }} x {{ v }}
-</li>
-{% endfor %}
+<li>{{ key }} x {{ value }}</li>
 {% endif %}
+{% endfor %}
+{% endfor %}
