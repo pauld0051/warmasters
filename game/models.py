@@ -15,26 +15,16 @@ class GameProfile(models.Model):
     """
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
+    bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
+        2000), MinValueValidator(50)], null=True, blank=False)
+    storage = models.PositiveIntegerField(validators=[MaxValueValidator(
+        2000), MinValueValidator(50)], null=True, blank=False)
     gold = models.PositiveIntegerField(null=True, blank=False)
-    
+    bag_items = models.CharField(max_length=254, null=True, blank=True)
     storage_items = models.CharField(max_length=254, null=True, blank=True)
-
 
     def __str__(self):
         return str(self.user)
-
-
-class Bag(models.Model):
-    bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=True)
-    bag_items = models.CharField(max_length=254, null=True, blank=True)
-
-
-class Storage(models.Model):
-    storage = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=True)
-    bag_items = models.CharField(max_length=254, null=True, blank=True)
-
 
 
 class Creed(models.Model):
@@ -45,8 +35,8 @@ class Creed(models.Model):
 
 
 class Character(models.Model):
-    race = models.ForeignKey('Creed', null=True, blank=False, on_delete=models.SET_NULL)
+    race = models.ForeignKey(
+        'Creed', null=True, blank=False, on_delete=models.SET_NULL)
     name = models.CharField(max_length=50, null=False, blank=False)
     strength = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
     image = models.ImageField(null=True, blank=True)
-

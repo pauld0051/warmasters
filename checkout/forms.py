@@ -10,7 +10,7 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
-                  'country')
+                  'country', 'send_to')
 
     def __init__(self, *args, **kwargs):
         """
@@ -22,6 +22,7 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
+            'send_to': ''
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
@@ -34,3 +35,4 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+

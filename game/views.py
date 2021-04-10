@@ -4,7 +4,9 @@ from django.shortcuts import (
 from django.db.models import Sum
 from profiles.models import UserProfile
 from checkout.models import OrderLineItem
-from .models import GameProfile, Creed, Character
+from .models import (
+    GameProfile, Creed, Character
+    )
 
 def game_profile(request):
     if request.user.is_authenticated:
@@ -41,11 +43,3 @@ def game_profile(request):
         }
 
     return render(request, template, context)
-
-
-def bag_items(request):
-    if request.user.is_authenticated:
-
-
-
-

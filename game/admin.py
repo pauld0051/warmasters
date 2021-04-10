@@ -39,4 +39,3 @@ class GameProfileAdmin(admin.ModelAdmin):
 admin.site.register(Creed, CreedAdmin)
 admin.site.register(Character, CharacterAdmin)
 admin.site.register(GameProfile, GameProfileAdmin)
-
