@@ -5,7 +5,7 @@ from django.db.models import Sum
 from profiles.models import UserProfile
 from checkout.models import OrderLineItem
 from .models import (
-    GameProfile, Creed, Character
+    GameProfile, Creed, Character, BagStorage
     )
 
 def game_profile(request):
@@ -21,6 +21,7 @@ def game_profile(request):
             total_size = sum_size.aggregate(size=Sum('product__size'))['size']
         bag_size = request.user.gameprofile.bag_size - total_size
         storage_size = request.user.gameprofile.storage - total_size
+        trade_size = request.user.gameprofile.storage - total_size
         items = []
         for order in orders:
             location = order.send_to
@@ -42,5 +43,41 @@ def game_profile(request):
         'accessories': accessories,
         'item': x,
         }
+
+    return render(request, template, context)
+
+
+def bag_storage(request):
+    if request.user.is_authenticated:
+        bag_size = request.user.gameprofile.bag_size
+
+    template = 'game/game_profile.html'
+    context = {
+        'bag_size': bag_size,
+    }
+
+    return render(request, template, context)
+
+
+def storage(request):
+    if request.user.is_authenticated:
+        storage = request.user.gameprofile.storage_size
+
+    template = 'game/game_profile.html'
+    context = {
+        'storage': storage,
+    }
+
+    return render(request, template, context)
+
+
+def trade(request):
+    if request.user.is_authenticated:
+        trade = request.user.gameprofile.trade_size
+
+    template = 'game/game_profile.html'
+    context = {
+        'trade': trade,
+    }
 
     return render(request, template, context)
