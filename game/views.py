@@ -1,7 +1,6 @@
 from django.shortcuts import (
     render, get_object_or_404
 )
-from collections import Counter
 from django.db.models import Sum
 from profiles.models import UserProfile
 from checkout.models import OrderLineItem
@@ -19,10 +18,16 @@ def game_profile(request):
         if sum_size:
             total_size = sum_size.aggregate(size=Sum('product__size'))['size']
         bag_size = request.user.gameprofile.bag_size - total_size
-        z = OrderLineItem.objects.filter(
-            order__user_profile=request.user.userprofile)
-
-        print("Here - look at this here...!!!***", Counter(z))
+        storage_size = request.user.gameprofile.storage - total_size
+        items = []
+        for order in orders:
+            for item in order.lineitems.all():
+                items.append({"name": item.product.name, "qty": item.quantity})
+        x = {}
+        for i in items:
+            _key = i['name']
+            _qty = i['qty']
+            x[_key] = x.get(_key, 0) + _qty
 
         template = 'game/game_profile.html'
         context = {
@@ -30,10 +35,17 @@ def game_profile(request):
         'orders': orders,
         'gold': gold,
         'bag_size': bag_size,
+        'storage_size': storage_size,
         'accessories': accessories,
+        'item': x,
         }
 
     return render(request, template, context)
+
+
+def bag_items(request):
+    if request.user.is_authenticated:
+
 
 
 

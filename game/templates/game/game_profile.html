@@ -31,7 +31,6 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-
                 {% if gold %}
                 <h2>Gold: {{ gold }} <i class="fas fa-coins text-yellow"></i></h2>
                 {% else %}
@@ -44,7 +43,8 @@
 
     <div class="row">
         <div class="card mt-2 mr-2 col-lg-3" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top img-fluid mx-auto" style="max-width: 18rem;" src="
+                {{MEDIA_URL}}warrior-no-image.jpg" alt="Chosen Character Image">
             <div class="card-header">
                 Character
             </div>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="card mt-2 mr-2 col-lg-3" style="width: 18rem;">
-            <img class="card-img-top img-fluid mx-auto" style="max-width: 9rem;" src="{{ MEDIA_URL}}backpack.jpg"
+            <img class="card-img-top img-fluid mx-auto" style="max-width: 18rem;" src="{{ MEDIA_URL}}backpack.jpg"
                 alt="Backpack storage">
             <i class="fas fa-expand-alt text-right mt-1 mb-1" data-toggle="popover"
                 data-content="Buy more bag space with your gold."></i>
@@ -62,22 +62,20 @@
                 <p>Space Remaining: {{ bag_size }}</p>
             </div>
             <div class="card-body">
-            {% for order in orders %}
-            {% for item in order.lineitems.all %}
+            {% for k, v in item.items %}
                 <li class="text-black">
-                    {{ item.product.name }}
+                    {{ k }} x {{ v }}
                 </li>
-            {% endfor %}
             {% endfor %}
             </div>
         </div>
         <div class="card mt-2 col-lg-3" style="width: 18rem;">
-            <img class="card-img-top img-fluid mx-auto" style="max-width: 9rem;" src="{{ MEDIA_URL}}dungeon-keep.jpg" alt="Dungeon keep storage">
+            <img class="card-img-top img-fluid mx-auto" style="max-width: 18rem;" src="{{ MEDIA_URL}}dungeon-keep.jpg" alt="Dungeon keep storage">
             <i class="fas fa-expand-alt text-right mt-1 mb-1" data-toggle="popover"
                 data-content="Buy more storage space with your gold."></i>
             <div class="card-header">
                 <p>Storage Items</p>
-                <p>Space Remaining: {{ user.gameprofile.storage }}</p>
+                <p>Space Remaining: {{ storage_size }}</p>
             </div>
             <div class="card-body">
                 Storage will go here
