@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Creed, Character, GameProfile, BagStorage, Storage, Trade
+from .models import (
+    Creed, Character, GameProfile, BagStorage, Storage, Trade, UserOwned
+)
 
 # Register your models here.
 """
@@ -20,7 +22,7 @@ class CharacterAdmin(admin.ModelAdmin):
         'race',
         'name',
         'strength',
-        'image'
+        'image',
     )
 
     ordering = ('name',)
@@ -33,6 +35,8 @@ class GameProfileAdmin(admin.ModelAdmin):
         'gold',
         'bag_items',
         'storage_items',
+        'enchantments',
+        'location',
     )
 
 
@@ -43,6 +47,9 @@ class BagStorageAdmin(admin.ModelAdmin):
         'quantity',
         'item_size',
         'user',
+        'category',
+        'item_weight',
+        'location',
     )
 
 
@@ -53,18 +60,34 @@ class StorageAdmin(admin.ModelAdmin):
         'quantity',
         'item_size',
         'user',
+        'category',
+        'location',
     )
 
 
 class TradeAdmin(admin.ModelAdmin):
     list_display = (
         'trade_size',
+        'category',
         'trade_item',
         'quantity',
         'item_size',
+        'item_weight',
         'user',
+        'location',
     )
 
+
+class UserOwnedAdmin(admin.ModelAdmin):
+    list_display = (
+        'category',
+        'quantity',
+        'item_size',
+        'item_weight',
+        'user',
+        'location',
+        'item',
+    )
 
 admin.site.register(Creed, CreedAdmin)
 admin.site.register(Character, CharacterAdmin)
@@ -72,3 +95,4 @@ admin.site.register(GameProfile, GameProfileAdmin)
 admin.site.register(BagStorage, BagStorageAdmin)
 admin.site.register(Storage, StorageAdmin)
 admin.site.register(Trade, TradeAdmin)
+admin.site.register(UserOwned, UserOwnedAdmin)

@@ -22,6 +22,8 @@ class GameProfile(models.Model):
     gold = models.PositiveIntegerField(null=True, blank=False)
     bag_items = models.CharField(max_length=254, null=True, blank=True)
     storage_items = models.CharField(max_length=254, null=True, blank=True)
+    enchantments = models.CharField(max_length=254, null=True, blank=True)
+    location = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return str(self.user)
@@ -37,6 +39,10 @@ class BagStorage(models.Model):
     bag_item = models.CharField(max_length=254, null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)
+    category = models.CharField(max_length=254, null=True, blank=True)
+    item_weight = models.PositiveIntegerField(null=True, blank=True)
+    location = models.CharField(max_length=254, null=True, blank=True)
+
 
 
 class Storage(models.Model):
@@ -50,11 +56,14 @@ class Storage(models.Model):
     storage_item = models.CharField(max_length=254, null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)
+    category = models.CharField(max_length=254, null=True, blank=True)
+    item_weight = models.PositiveIntegerField(null=True, blank=True)
+    location = models.CharField(max_length=254, null=True, blank=True)
 
 
 class Trade(models.Model):
     class Meta:
-        verbose_name_plural = 'Trading'
+        verbose_name_plural = 'User owned'
 
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
@@ -63,7 +72,23 @@ class Trade(models.Model):
     trade_item = models.CharField(max_length=254, null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)
+    category = models.CharField(max_length=254, null=True, blank=True)
+    item_weight = models.PositiveIntegerField(null=True, blank=True)
+    location = models.CharField(max_length=254, null=True, blank=True)
 
+
+class UserOwned(models.Model):
+    class Meta:
+        verbose_name_plural = 'Trading'
+
+    user = models.OneToOneField(
+        User, null=True, on_delete=models.CASCADE)
+    item = models.PositiveIntegerField(null=True, blank=True)
+    quantity = models.PositiveIntegerField(null=True, blank=True)
+    item_size = models.PositiveIntegerField(null=True, blank=True)
+    category = models.CharField(max_length=254, null=True, blank=True)
+    item_weight = models.PositiveIntegerField(null=True, blank=True)
+    location = models.CharField(max_length=254, null=True, blank=True)
 
 class Creed(models.Model):
     creed = models.CharField(max_length=50, null=False, blank=False)
