@@ -23,13 +23,7 @@ def game_profile(request):
         bag_size = request.user.gameprofile.bag_size - total_size
         storage_size = request.user.gameprofile.storage - total_size
         trade_size = request.user.gameprofile.storage - total_size
-        items = []
-        x = defaultdict(dict)
-        for order in orders:
-            for item in order.lineitems.all():
-                items.append({"name": item.product.name, "qty": item.quantity})
-                x[order.send_to][item.product.name] = item.quantity
-        print(x)
+
         template = 'game/game_profile.html'
         context = {
         'profile': profile,

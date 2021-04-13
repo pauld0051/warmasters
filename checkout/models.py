@@ -1,5 +1,5 @@
 """
-Form fields settings.
+Form fields settings for the checkout.
 """
 import uuid
 
@@ -29,12 +29,6 @@ class Order(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(
         max_length=254, null=False, blank=False, default='')
-    put_in = [
-        ("Storage", "Storage"),
-        ("Bag", "Bag"),
-        ("Trade", "Trade"),
-    ]
-    send_to = models.CharField(choices=put_in, max_length=7, default=1)
 
     def _generate_order_number(self):
         """

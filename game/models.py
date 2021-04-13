@@ -6,6 +6,28 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.core.validators import MaxValueValidator, MinValueValidator
+from products.models import Product, Category
+from profiles.models import UserProfile
+from checkout.models import OrderLineItem
+
+
+class GameItem(models.Model):
+    user = models.ForeignKey(
+        UserProfile, null=True, blank=True, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, blank=True, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(null=True, blank=True)
+    locate = [
+        ("Storage", "Storage"),
+        ("Bag", "Bag"),
+        ("Trade", "Trade"),
+    ]
+    location = models.CharField(choices=locate, max_length=7, blank=False, default="Storage")
+
+    def save(self, *args, **kwargs):
+        """
+        Save the order to the game profile separting all items.
+        """
+        super().save(*args, **kwargs)
 
 
 class GameProfile(models.Model):
@@ -17,16 +39,16 @@ class GameProfile(models.Model):
         User, null=True, on_delete=models.CASCADE)
     bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
         2000), MinValueValidator(50)], null=True, blank=False)
-    storage = models.PositiveIntegerField(validators=[MaxValueValidator(
+    storage_size = models.PositiveIntegerField(validators=[MaxValueValidator(
         2000), MinValueValidator(50)], null=True, blank=False)
     gold = models.PositiveIntegerField(null=True, blank=False)
-    bag_items = models.CharField(max_length=254, null=True, blank=True)
     storage_items = models.CharField(max_length=254, null=True, blank=True)
+    trade_items = models.CharField(max_length=254, null=True, blank=True)
+    bag_increase = models.CharField(max_length=254, null=True, blank=True)
+    storage_increase = models.CharField(max_length=254, null=True, blank=True)
+    trade_increase = models.CharField(max_length=254, null=True, blank=True)
     enchantments = models.CharField(max_length=254, null=True, blank=True)
-    location = models.CharField(max_length=254, null=True, blank=True)
 
-    def __str__(self):
-        return str(self.user)
 
 class BagStorage(models.Model):
     class Meta:
@@ -36,7 +58,8 @@ class BagStorage(models.Model):
         User, null=True, on_delete=models.CASCADE)
     bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
         2000), MinValueValidator(50)], null=True, blank=False)
-    bag_item = models.CharField(max_length=254, null=True, blank=True)
+    bag_item = models.ForeignKey(GameItem, null=True,
+                              blank=True, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)
     category = models.CharField(max_length=254, null=True, blank=True)
@@ -63,7 +86,7 @@ class Storage(models.Model):
 
 class Trade(models.Model):
     class Meta:
-        verbose_name_plural = 'User owned'
+        verbose_name_plural = 'Trading'
 
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
@@ -79,11 +102,11 @@ class Trade(models.Model):
 
 class UserOwned(models.Model):
     class Meta:
-        verbose_name_plural = 'Trading'
+        verbose_name_plural = 'User owned'
 
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
-    item = models.PositiveIntegerField(null=True, blank=True)
+    item = models.CharField(max_length=254, null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)
     category = models.CharField(max_length=254, null=True, blank=True)

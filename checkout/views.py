@@ -14,7 +14,9 @@ from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from .forms import OrderForm
+from game.forms import GameItemForm
 from .models import Order, OrderLineItem
+from game.models import GameItem
 from bag.contexts import bag_contents
 
 
@@ -47,7 +49,6 @@ def checkout(request):
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'country': request.POST['country'],
-            'send_to': request.POST['send_to']
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -65,6 +66,12 @@ def checkout(request):
                             product=product,
                             quantity=item_data,
                         )
+                        game_item = GameItem(
+                            user=UserProfile.objects.get(user=request.user),
+                            product=product,
+                            quantity=item_data,
+                        )
+                        game_item.save(game_item)
                         order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (

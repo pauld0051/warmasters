@@ -24,7 +24,6 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
-    send_to = "Storage"
 
     if item_id in list(bag.keys()):
         if bag[item_id] >= 99 or (bag[item_id] + quantity) >= 99:

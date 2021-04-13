@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import (
-    Creed, Character, GameProfile, BagStorage, Storage, Trade, UserOwned
+    Creed, Character, GameProfile, BagStorage,
+    Storage, Trade, UserOwned, GameItem
 )
 
 # Register your models here.
@@ -28,26 +29,35 @@ class CharacterAdmin(admin.ModelAdmin):
     ordering = ('name',)
 
 
+class GameItemAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'product',
+        'quantity',
+        'location',
+    )
+
+
 class GameProfileAdmin(admin.ModelAdmin):
     list_display = (
         'bag_size',
-        'storage',
+        'storage_size',
         'gold',
-        'bag_items',
-        'storage_items',
+        'bag_increase',
+        'storage_increase',
+        'trade_increase',
         'enchantments',
-        'location',
     )
 
 
 class BagStorageAdmin(admin.ModelAdmin):
     list_display = (
+        'user',
         'bag_size',
+        'category',
         'bag_item',
         'quantity',
         'item_size',
-        'user',
-        'category',
         'item_weight',
         'location',
     )
@@ -55,43 +65,45 @@ class BagStorageAdmin(admin.ModelAdmin):
 
 class StorageAdmin(admin.ModelAdmin):
     list_display = (
+        'user',
         'storage_size',
+        'category',
         'storage_item',
         'quantity',
         'item_size',
-        'user',
-        'category',
+        'item_weight',
         'location',
     )
 
 
 class TradeAdmin(admin.ModelAdmin):
     list_display = (
+        'user',
         'trade_size',
-        'category',
         'trade_item',
+        'category',
         'quantity',
         'item_size',
         'item_weight',
-        'user',
         'location',
     )
 
 
 class UserOwnedAdmin(admin.ModelAdmin):
     list_display = (
+        'user',
         'category',
+        'item',
         'quantity',
         'item_size',
         'item_weight',
-        'user',
         'location',
-        'item',
     )
 
 admin.site.register(Creed, CreedAdmin)
 admin.site.register(Character, CharacterAdmin)
 admin.site.register(GameProfile, GameProfileAdmin)
+admin.site.register(GameItem, GameItemAdmin)
 admin.site.register(BagStorage, BagStorageAdmin)
 admin.site.register(Storage, StorageAdmin)
 admin.site.register(Trade, TradeAdmin)
