@@ -12,8 +12,33 @@ from .models import (
 from .forms import CharacterForm, GameProfileForm
 
 
+def make_profile(request):
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        template = 'game/make_profile.html'
+        context = {
+            'profile': profile,
+        }
+        if request.method == 'POST':
+            GameProfile.objects.create(
+                user=request.user, bag_size=0,
+                storage_size=0, trade_size=0,
+                gold=50, storage_items="",
+                trade_items="", bag_increase=0,
+                storage_increase=0, trade_increase=0,
+                enchantments="", character_name=""
+            )
+
+            return redirect('create_character')
+
+        return render(request, template, context)
+
 def game_profile(request):
     if request.user.is_authenticated:
+        try:
+            GameProfile.objects.get(pk=-1)
+        except:
+            return redirect('make_profile')
         profile = UserProfile.objects.get(user=request.user)
         gold = request.user.gameprofile.gold
         character_name = request.user.gameprofile.character_name

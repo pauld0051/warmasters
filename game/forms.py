@@ -7,7 +7,7 @@ from django import forms
 from .models import (
     GameItem, Character,
     GameProfile, BagStorage,
-    Storage, Trade
+    Storage, Trade, 
 )
 
 
@@ -48,3 +48,14 @@ class TradeForm(forms.ModelForm):
     class Meta:
         model = Trade
         fields = ('trade_size',)
+
+
+class MakeProfileForm(forms.ModelForm):
+    class Meta:
+        model = GameProfile
+        fields = ('user', 'bag_size',
+                  'storage_size', 'trade_size',
+                  'gold', 'storage_items',
+                  'trade_items', 'bag_increase',
+                  'storage_increase', 'trade_increase',
+                  'enchantments', 'character_name',)

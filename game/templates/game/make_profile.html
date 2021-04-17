@@ -1,0 +1,42 @@
+{% extends "game/base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'game/css/game.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'game/js/game.js' %}"></script>
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4 text-yellow">{{ profile }}, Create Your Character Profile
+            </h2>
+            <hr>
+        </div>
+    </div>
+<p class="text-lgt-gray">To play Warmasters you first need to create a profile and a character that you're going to use. 
+    Choose wisely as you can only pick your character once!
+</p>
+<p class="text-lgt-gray">Once you have created your character, any items you've purchased or are about to purchase will go into your storage 
+    where they can then be traded or used in the game. 
+</p>
+<form method="POST" action="{% url 'make_profile' %}">
+     {% csrf_token %}
+    <button class="btn btn-black rounded-0" type="submit">Create Your Profile Now!</button>
+</form>
+</div> <!-- opening container in the block content -->
+{% endblock %}
