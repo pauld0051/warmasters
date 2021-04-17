@@ -64,12 +64,12 @@ class CharacterChoice(models.Model):
 
 
 class Character(models.Model):
+    user = models.OneToOneField(
+        User, null=True, on_delete=models.CASCADE)
     race = models.CharField(max_length=50, null=True, blank=False)
     name = models.CharField(max_length=50, null=False, blank=False)
     strength = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
     image = models.ImageField(null=True, blank=True)
-    user = models.ForeignKey(
-        UserProfile, null=True, blank=True, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

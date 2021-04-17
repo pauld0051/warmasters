@@ -37,12 +37,14 @@ def make_profile(request):
 def game_profile(request):
     if request.user.is_authenticated:
         try:
-            GameProfile.objects.get(pk=-1)
+            profile_exists = request.user.gameprofile.user
         except:
             return redirect('make_profile')
         profile = UserProfile.objects.get(user=request.user)
         gold = request.user.gameprofile.gold
         character_name = request.user.gameprofile.character_name
+        game_profile = request.user.gameprofile
+        character_details = request.user.character
         if character_name is not None:
             bag = request.user.gameprofile.bag_size
             storage = request.user.gameprofile.storage_size
@@ -70,6 +72,8 @@ def game_profile(request):
             'storage_increase': storage_increase,
             'trade_increase': trade_increase,
             'character_name': character_name,
+            'game_profile': game_profile,
+            'character': character_details,
         }
 
         return render(request, template, context)

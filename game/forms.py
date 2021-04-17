@@ -21,9 +21,10 @@ class GameItemForm(forms.ModelForm):
 class CharacterForm(forms.ModelForm):
     class Meta:
         model = Character
-        fields = ('race', 'name',
-                 'strength', 'image',
-                 'user')
+        fields = ('user', 'race',
+                 'name', 'strength',
+                 'image',
+                 )
 
 
 class GameProfileForm(forms.ModelForm):
