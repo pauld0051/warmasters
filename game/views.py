@@ -33,6 +33,7 @@ def make_profile(request):
 
         return render(request, template, context)
 
+
 def game_profile(request):
     if request.user.is_authenticated:
         try:
@@ -76,7 +77,7 @@ def game_profile(request):
 
 def create_character(request):
     character_name = request.user.gameprofile.character_name
-    if character_name is None:
+    if character_name is None or character_name == "":
         character_choice = CharacterChoice.objects.all()
         profile = UserProfile.objects.get(user=request.user)
         template = 'game/create_character.html'
