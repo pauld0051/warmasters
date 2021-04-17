@@ -81,7 +81,7 @@ def game_profile(request):
 
 def create_character(request):
     character_name = request.user.gameprofile.character_name
-    if character_name is None or character_name == "":
+    if not character_name:
         character_choice = CharacterChoice.objects.all()
         profile = UserProfile.objects.get(user=request.user)
         template = 'game/create_character.html'
@@ -95,14 +95,13 @@ def create_character(request):
             chosen_character_race = request.POST.get('race')
             chosen_character_strength = request.POST.get('strength')
             chosen_character_image = request.POST.get('image')
-            user = profile
             game_profile = request.user.gameprofile
             game_profile.character_name = chosen_character_name
             game_profile.save()
             Character.objects.create(
                 name=chosen_character_name, race=chosen_character_race,
                 strength=chosen_character_strength, image=chosen_character_image,
-                user=user)
+                user=request.user)
             BagStorage.objects.create(user=request.user, bag_size=50)
             Storage.objects.create(user=request.user, storage_size=200)
             Trade.objects.create(user=request.user, trade_size=50)
