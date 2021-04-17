@@ -8,7 +8,6 @@ from django.db.models.signals import post_save
 from django.core.validators import MaxValueValidator, MinValueValidator
 from products.models import Product, Category
 from profiles.models import UserProfile
-from checkout.models import OrderLineItem
 
 
 class GameItem(models.Model):
@@ -38,17 +37,42 @@ class GameProfile(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
     bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=False)
+        2000), MinValueValidator(50)], null=True, blank=True)
     storage_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=False)
-    gold = models.PositiveIntegerField(null=True, blank=False)
+        2000), MinValueValidator(50)], null=True, blank=True)
+    trade_size = models.PositiveIntegerField(validators=[MaxValueValidator(
+        2000), MinValueValidator(50)], null=True, blank=True)
+    gold = models.PositiveIntegerField(null=True, blank=True)
     storage_items = models.CharField(max_length=254, null=True, blank=True)
     trade_items = models.CharField(max_length=254, null=True, blank=True)
     bag_increase = models.CharField(max_length=254, null=True, blank=True)
     storage_increase = models.CharField(max_length=254, null=True, blank=True)
     trade_increase = models.CharField(max_length=254, null=True, blank=True)
     enchantments = models.CharField(max_length=254, null=True, blank=True)
+    character_name = models.CharField(max_length=254, null=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+
+class CharacterChoice(models.Model):
+    race = models.ForeignKey(
+        'Creed', null=True, blank=False, on_delete=models.SET_NULL)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    strength = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
+    image = models.ImageField(null=True, blank=True)
+
+
+class Character(models.Model):
+    race = models.CharField(max_length=50, null=True, blank=False)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    strength = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
+    image = models.ImageField(null=True, blank=True)
+    user = models.ForeignKey(
+        UserProfile, null=True, blank=True, on_delete=models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
 class BagStorage(models.Model):
     class Meta:
@@ -57,7 +81,7 @@ class BagStorage(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
     bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=False)
+        2000), MinValueValidator(50)], null=True, blank=True)
     bag_item = models.ForeignKey(GameItem, null=True,
                               blank=True, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(null=True, blank=True)
@@ -118,11 +142,3 @@ class Creed(models.Model):
 
     def __str__(self):
         return self.creed
-
-
-class Character(models.Model):
-    race = models.ForeignKey(
-        'Creed', null=True, blank=False, on_delete=models.SET_NULL)
-    name = models.CharField(max_length=50, null=False, blank=False)
-    strength = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
-    image = models.ImageField(null=True, blank=True)

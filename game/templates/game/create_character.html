@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col text-center mt-3">
+        <h2 class="logo-font text-yellow">Create Your Character</h2>
+            <span class="text-lgt-gray">Click on the image to learn more, then</span>
+            <span class="text-lgt-gray">select your hero from the following:</span>
+    </div>
+</div>
+<div class="row">
+    {% for character_choice in character_choices %}
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="card h-100 border-0">
+            <a data-toggle="modal" data-target="#{{ character_choice.name }}">
+            <img class="card-img-top img-fluid" src="{{ character_choice.image.url }}" alt="{{ character_choice.name }}">
+            </a>
+            <!-- Display Hero Modals -->
+            <div class="modal fade" id="{{ character_choice.name }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal-product-head text-center">
+                            <h5 class="modal-title product-title modal-product-head w-100 glow font-weight-bold">
+                                {{ character_choice.name }}
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="card-img-top img-fluid" src="{{ character_choice.image.url }}"
+                                alt="{{ character_choice.name }}">
+                                <p>Choose your character carefully, once you have chosen, you can not change.</p>
+                                <form method="POST" action="{% url 'create_character' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="name" value="{{character_choice.name}}" />
+                                    <input type="hidden" name="strength" value="{{character_choice.strength}}" />
+                                    <input type="hidden" name="race" value="{{character_choice.race}}" />
+                                    <input type="hidden" name="image" value="{{character_choice.image}}" />
+                                    <input type="hidden" name="user" value="{{user}}" />
+                                    <button class="btn btn-black rounded-0" type="submit">I choose
+                                        {{ character_choice.name }}</button>
+                                </form>
+                        </div>
+                        <div class="modal-footer modal-product-foot">
+                            <p class="lead mb-0 mr-auto text-black font-weight-bold">Race: {{ character_choice.race }}
+                            </p>
+                            <p class="lead mb-0 mr-auto text-black font-weight-bold">Strength:
+                                {{ character_choice.strength }}</p>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
+{% block postloadjs %}
+ <script src="{% static 'game/js/game.js' %}"></script>
+{% endblock %}

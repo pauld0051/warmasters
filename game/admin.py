@@ -1,7 +1,8 @@
 from django.contrib import admin
 from .models import (
     Creed, Character, GameProfile, BagStorage,
-    Storage, Trade, UserOwned, GameItem
+    Storage, Trade, UserOwned, GameItem,
+    CharacterChoice
 )
 
 # Register your models here.
@@ -18,7 +19,7 @@ class CreedAdmin(admin.ModelAdmin):
     ordering = ('creed',)
 
 
-class CharacterAdmin(admin.ModelAdmin):
+class CharacterChoiceAdmin(admin.ModelAdmin):
     list_display = (
         'race',
         'name',
@@ -26,7 +27,19 @@ class CharacterAdmin(admin.ModelAdmin):
         'image',
     )
 
-    ordering = ('name',)
+
+class CharacterAdmin(admin.ModelAdmin):
+    list_display = (
+        'race',
+        'name',
+        'strength',
+        'image',
+        'user',
+    )
+
+    ordering = ('user',)
+
+
 
 
 class GameItemAdmin(admin.ModelAdmin):
@@ -40,6 +53,7 @@ class GameItemAdmin(admin.ModelAdmin):
 
 class GameProfileAdmin(admin.ModelAdmin):
     list_display = (
+        'user',
         'bag_size',
         'storage_size',
         'gold',
@@ -108,3 +122,4 @@ admin.site.register(BagStorage, BagStorageAdmin)
 admin.site.register(Storage, StorageAdmin)
 admin.site.register(Trade, TradeAdmin)
 admin.site.register(UserOwned, UserOwnedAdmin)
+admin.site.register(CharacterChoice, CharacterChoiceAdmin)
