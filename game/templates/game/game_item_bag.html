@@ -24,7 +24,8 @@
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4 text-yellow">Your Backpack
-                <span class="float-right">Bag Size: {{ bag.bag_size }} <i class="fas fa-dungeon text-yellow"></i></span>
+                <span class="float-right">Bag Capacity: {{ bag.bag_size }} <i class="fas fa-hiking text-yellow"></i></span>
+                <span class="float-right mr-5">Gold: {{ gold }} <i class="fas fa-coins text-yellow"></i></span>
             </h2>
             <hr>
         </div>
@@ -35,6 +36,7 @@
         <h5 class="card-title">You have the following items in your backpack. <span class="float-right"><a
                     href="{% url 'game_profile' %}">Profile</a> | <a href="{% url 'game_item_storage' %}">Storage</a> | <a
                     href="{% url 'game_item_trade' %}">Trade</a></span></h5>
+        <h5 class=card-title">Your total bag size remaining = {{ bag_size }}</h5>
         <ul>
             {% for category in categories %}
             <button class="btn btn-black rounded-0" type="button" data-toggle="collapse"
@@ -50,7 +52,7 @@
                             <img class="image-size card-img-top img-fluid mx-auto"
                                 src="{{ MEDIA_URL}}{{ game_item.image }}" alt="{{ game_item.product }}">
                             <div class="card-body">
-                                <h5 class="card-title">{{ game_item.product }} and HELLO! {{  game_item.location }}</h5>
+                                <h5 class="card-title">{{ game_item.product }}</h5>
                                 <a href="#" class="btn btn-primary">Move {{ game_item.product }}</a>
                             </div>
                         </div>

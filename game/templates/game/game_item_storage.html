@@ -24,8 +24,9 @@
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4 text-yellow">Your Dungeon Keep
-                <span class="float-right">Hold: {{ storage.storage_size }} <i
+                <span class="float-right">Hold Capacity: {{ storage.storage_size }} <i
                         class="fas fa-dungeon text-yellow"></i></span>
+                <span class="float-right mr-5">Gold: {{ gold }} <i class="fas fa-coins text-yellow"></i></span>
             </h2>
             <hr>
         </div>
@@ -33,9 +34,10 @@
 </div>
 <div class="card border-primary mx-auto mt-2 mb-3 col-sm-9 min-height">
     <div class="card-body">
-        <h5 class="card-title">You have the following items in your Dungeon Keep. <span class="float-right"><a
+        <h5 class="card-title">You have the following items in your Dungeon Keep.  <span class="float-right"><a
                     href="{% url 'game_profile' %}">Profile</a> | <a href="{% url 'game_item_bag' %}">Bag</a> | <a
                     href="{% url 'game_item_trade' %}">Trade</a></span></h5>
+        <h5 class=card-title">Your total hold size remaining = {{ hold_size }}</h5>
         <ul>
             {% for category in categories %}
                 <button class="btn btn-black rounded-0" type="button" data-toggle="collapse"

@@ -1,7 +1,7 @@
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404
 )
-from django.db.models import Sum
+from django.db.models import F, Sum
 from django.contrib.auth.models import User
 from profiles.models import UserProfile
 from products.models import Product, Category
@@ -121,7 +121,12 @@ def game_item_storage(request):
         game_items = GameItem.objects.filter(user=profile)
         products = Product.objects.all()
         categories = Category.objects.all()
-
+        gold = request.user.gameprofile.gold
+        reduce_hold_by = 0
+        for game_item in game_items:
+            if game_item.location == "Storage" and game_item.size:
+                reduce_hold_by += game_item.quantity * game_item.size
+        hold_size = storage_items.storage_size - reduce_hold_by
         template = 'game/game_item_storage.html'
         context = {
             'storage': storage_items,
@@ -129,6 +134,8 @@ def game_item_storage(request):
             'user': profile,
             'products': products,
             'categories': categories,
+            'hold_size': hold_size,
+            'gold': gold,
         }
         return render(request, template, context)
 
@@ -140,7 +147,12 @@ def game_item_bag(request):
         game_items = GameItem.objects.filter(user=profile)
         products = Product.objects.all()
         categories = Category.objects.all()
-
+        gold = request.user.gameprofile.gold
+        reduce_bag_by = 0
+        for game_item in game_items:
+            if game_item.location == "Bag" and game_item.size:
+                reduce_bag_by += game_item.quantity * game_item.size
+        bag_size = bag_items.bag_size - reduce_bag_by
         template = 'game/game_item_bag.html'
         context = {
             'bag': bag_items,
@@ -148,6 +160,8 @@ def game_item_bag(request):
             'user': profile,
             'products': products,
             'categories': categories,
+            'bag_size': bag_size,
+            'gold': gold,
         }
         return render(request, template, context)
 
@@ -160,7 +174,11 @@ def game_item_trade(request):
         products = Product.objects.all()
         categories = Category.objects.all()
         gold = request.user.gameprofile.gold
-
+        reduce_trade_by = 0
+        for game_item in game_items:
+            if game_item.location == "Trade" and game_item.size:
+                reduce_trade_by += game_item.quantity * game_item.size
+        trade_size = trade_items.trade_size - reduce_trade_by
         template = 'game/game_item_trade.html'
         context = {
             'trade': trade_items,
@@ -169,5 +187,6 @@ def game_item_trade(request):
             'products': products,
             'categories': categories,
             'gold': gold,
+            'trade_size': trade_size,
         }
         return render(request, template, context)

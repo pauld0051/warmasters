@@ -48,6 +48,7 @@ class GameItemAdmin(admin.ModelAdmin):
         'product',
         'quantity',
         'location',
+        'size'
     )
 
 
