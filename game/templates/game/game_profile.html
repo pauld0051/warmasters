@@ -34,7 +34,6 @@
         <div class="card h-100 border-0">
                 <img class="card-img-top img-fluid" src="{{ character.image.url }}"
                     alt="{{ game_profile.character_name }}">
-            </a>
             <div class="card-body">
                 <p class="card-text text-black">Name: {{character.name}}</p>
                 <p class="card-text text-black">Strength: {{character.strength}}</p>
@@ -47,7 +46,6 @@
         <div class="card h-100 border-0">
             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}bag_storage.jpg"
                 alt="Bag storage">
-            </a>
             <div class="card-body">
                 <p class="card-text text-black">Click to see the contents in your bag</p>
             </div>
@@ -55,9 +53,9 @@
     </div>
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
         <div class="card h-100 border-0">
-            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}storage_keep.jpg"
-                alt="Storage keep">
-            </a>
+            <a href="{% url 'game_item_storage' %}"><img class="card-img-top img-fluid"
+                    src="{{ MEDIA_URL }}storage_keep.jpg"
+                alt="Storage keep"></a>
             <div class="card-body">
                 <p class="card-text text-black">Click to see the contents in your storage</p>
             </div>
@@ -67,7 +65,6 @@
         <div class="card h-100 border-0">
             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}trading_post.jpg"
                 alt="Trading post">
-            </a>
             <div class="card-body">
                 <p class="card-text text-black">Click to begin trading</p>
             </div>

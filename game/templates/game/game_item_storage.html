@@ -1,0 +1,58 @@
+{% extends "game/base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'game/css/game.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'game/js/game.js' %}"></script>
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4 text-yellow">Your Dungeon Keep
+                <span class="float-right">Hold: {{ storage_items.storage_size }} <i
+                        class="fas fa-dungeon text-yellow"></i></span>
+            </h2>
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="card border-primary mx-auto mt-2 mb-3 col-sm-9 min-height">
+    <div class="card-body">
+        <h5 class="card-title">You have the following items in your Dungeon Keep.</h5>
+        <ul>
+            {% for category in categories %}
+                <button class="btn btn-black rounded-0" type="button" data-toggle="collapse"
+                    data-target="#{{ category.name }}"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    {{ category.friendly_name }}
+                </button>
+            <div class="collapse" id="{{ category.name }}">
+                <div class="card card-body">
+                   {% for location in location %}
+                    {% if location.location == "Storage" %}
+                     {{ location.category }} and {{ category.name }}
+                    {% endif %}
+                   {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

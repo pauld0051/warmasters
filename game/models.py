@@ -14,6 +14,10 @@ class GameItem(models.Model):
     user = models.ForeignKey(
         UserProfile, null=True, blank=True, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, blank=True, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, blank=True, on_delete=models.CASCADE)
+    image = models.ImageField(null=True, blank=True)
+    size = models.PositiveIntegerField(null=True, blank=True)
+    weight = models.PositiveIntegerField(null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     locate = [
         ("Storage", "Storage"),

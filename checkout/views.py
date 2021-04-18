@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.conf import settings
 
 import stripe
-from products.models import Product
+from products.models import Product, Category
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from .forms import OrderForm
@@ -70,6 +70,10 @@ def checkout(request):
                             user=UserProfile.objects.get(user=request.user),
                             product=product,
                             quantity=item_data,
+                            category=product.category,
+                            image=product.image,
+                            size=product.size,
+                            weight=product.weight,
                         )
                         game_item.save(game_item)
                         order_line_item.save()

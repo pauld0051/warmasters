@@ -4,10 +4,11 @@ from django.shortcuts import (
 from django.db.models import Sum
 from django.contrib.auth.models import User
 from profiles.models import UserProfile
+from products.models import Product, Category
 from .models import (
     GameProfile, Creed, Character,
     BagStorage, Storage, Trade,
-    CharacterChoice
+    CharacterChoice, GameItem
 )
 from .forms import CharacterForm, GameProfileForm
 
@@ -37,6 +38,7 @@ def make_profile(request):
 def game_profile(request):
     if request.user.is_authenticated:
         try:
+            # Used only as a check - variable remains unused
             profile_exists = request.user.gameprofile.user
         except:
             return redirect('make_profile')
@@ -110,3 +112,22 @@ def create_character(request):
         return render(request, template, context)
     else:
         return redirect('game_profile')
+
+
+def game_item_storage(request):
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        storage_items = Storage.objects.filter(user=request.user)
+        location = GameItem.objects.filter(user=profile)
+        products = Product.objects.all()
+        categories = Category.objects.all()
+        template = 'game/game_item_storage.html'
+        context = {
+            'storage_items': storage_items,
+            'user': profile,
+            'location': location,
+            'products': products,
+            'categories': categories,
+        }
+
+        return render(request, template, context)

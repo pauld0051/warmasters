@@ -15,7 +15,10 @@ class GameItemForm(forms.ModelForm):
     class Meta:
         model = GameItem
         fields = ('user', 'product',
-                  'quantity', 'location')
+                  'category', 'image',
+                  'size', 'weight',
+                  'quantity', 'location',
+                  )
 
 
 class CharacterForm(forms.ModelForm):

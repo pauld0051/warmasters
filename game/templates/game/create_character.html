@@ -29,7 +29,7 @@
 </div>
 <div class="row">
     {% for character_choice in character_choices %}
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
         <div class="card h-100 border-0">
             <a data-toggle="modal" data-target="#{{ character_choice.name }}">
             <img class="card-img-top img-fluid" src="{{ character_choice.image.url }}" alt="{{ character_choice.name }}">
