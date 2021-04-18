@@ -131,3 +131,43 @@ def game_item_storage(request):
             'categories': categories,
         }
         return render(request, template, context)
+
+
+def game_item_bag(request):
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        bag_items = BagStorage.objects.get(user=request.user)
+        game_items = GameItem.objects.filter(user=profile)
+        products = Product.objects.all()
+        categories = Category.objects.all()
+
+        template = 'game/game_item_bag.html'
+        context = {
+            'bag': bag_items,
+            'game_items': game_items,
+            'user': profile,
+            'products': products,
+            'categories': categories,
+        }
+        return render(request, template, context)
+
+
+def game_item_trade(request):
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        trade_items = Trade.objects.get(user=request.user)
+        game_items = GameItem.objects.filter(user=profile)
+        products = Product.objects.all()
+        categories = Category.objects.all()
+        gold = request.user.gameprofile.gold
+
+        template = 'game/game_item_trade.html'
+        context = {
+            'trade': trade_items,
+            'game_items': game_items,
+            'user': profile,
+            'products': products,
+            'categories': categories,
+            'gold': gold,
+        }
+        return render(request, template, context)
