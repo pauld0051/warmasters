@@ -24,7 +24,7 @@
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4 text-yellow">Your Dungeon Keep
-                <span class="float-right">Hold: {{ storage_items.storage_size }} <i
+                <span class="float-right">Hold: {{ storage.storage_size }} <i
                         class="fas fa-dungeon text-yellow"></i></span>
             </h2>
             <hr>
@@ -38,16 +38,25 @@
             {% for category in categories %}
                 <button class="btn btn-black rounded-0" type="button" data-toggle="collapse"
                     data-target="#{{ category.name }}"
-                    aria-expanded="false" aria-controls="collapseExample">
+                    aria-expanded="false" aria-controls="{{ category.name }}">
                     {{ category.friendly_name }}
                 </button>
             <div class="collapse" id="{{ category.name }}">
-                <div class="card card-body">
-                   {% for location in location %}
-                    {% if location.location == "Storage" %}
-                     {{ location.category }} and {{ category.name }}
-                    {% endif %}
-                   {% endfor %}
+                <div class="card col-sm-12 col-md-4">
+                    <div class="row mt-2 mb-2">
+                        {% for game_item in game_items %}
+                        {% if game_item.category.name == category.name %}
+                            <div class="card ml-2">
+                                <img class="image-size card-img-top img-fluid mx-auto" src="{{ MEDIA_URL}}{{ game_item.image }}"
+                                        alt="{{ game_item.product }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ game_item.product }}</h5>
+                                    <a href="#" class="btn btn-primary">Move {{ game_item.product }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             {% endfor %}

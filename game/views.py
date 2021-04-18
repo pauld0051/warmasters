@@ -117,17 +117,17 @@ def create_character(request):
 def game_item_storage(request):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        storage_items = Storage.objects.filter(user=request.user)
-        location = GameItem.objects.filter(user=profile)
+        storage_items = Storage.objects.get(user=request.user)
+        game_items = GameItem.objects.filter(user=profile)
         products = Product.objects.all()
         categories = Category.objects.all()
+
         template = 'game/game_item_storage.html'
         context = {
-            'storage_items': storage_items,
+            'storage': storage_items,
+            'game_items': game_items,
             'user': profile,
-            'location': location,
             'products': products,
             'categories': categories,
         }
-
         return render(request, template, context)
