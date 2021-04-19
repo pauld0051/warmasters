@@ -119,6 +119,21 @@ def game_item_storage(request):
         profile = UserProfile.objects.get(user=request.user)
         storage_items = Storage.objects.get(user=request.user)
         game_items = GameItem.objects.filter(user=profile)
+        sort = None
+        direction = None
+        if request.GET:
+            if 'sort' in request.GET:
+                sortkey = request.GET['sort']
+                sort = sortkey
+                if sortkey == 'name':
+                    sortkey = 'product'
+                if sortkey == 'category':
+                    sortkey == 'category'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+                game_items = game_items.order_by(sortkey)
         products = Product.objects.all()
         categories = Category.objects.all()
         gold = request.user.gameprofile.gold
@@ -127,6 +142,7 @@ def game_item_storage(request):
             if game_item.location == "Storage" and game_item.size:
                 reduce_hold_by += game_item.quantity * game_item.size
         hold_size = storage_items.storage_size - reduce_hold_by
+        current_sorting = f'{sort}_{direction}'
         template = 'game/game_item_storage.html'
         context = {
             'storage': storage_items,
@@ -136,6 +152,7 @@ def game_item_storage(request):
             'categories': categories,
             'hold_size': hold_size,
             'gold': gold,
+            'current_sorting': current_sorting,
         }
         return render(request, template, context)
 
@@ -152,7 +169,9 @@ def game_item_bag(request):
         for game_item in game_items:
             if game_item.location == "Bag" and game_item.size:
                 reduce_bag_by += game_item.quantity * game_item.size
+                item_categories = game_item.category
         bag_size = bag_items.bag_size - reduce_bag_by
+
         template = 'game/game_item_bag.html'
         context = {
             'bag': bag_items,
@@ -162,6 +181,7 @@ def game_item_bag(request):
             'categories': categories,
             'bag_size': bag_size,
             'gold': gold,
+            'item_categories': item_categories,
         }
         return render(request, template, context)
 

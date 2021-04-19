@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'game/css/game.css' %}">
+    <link rel="stylesheet" href="{% static 'game/css/game.css' %}">
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'game/js/game.js' %}"></script>
+    <script src="{% static 'game/js/game.js' %}" defer></script>
 {% endblock %}
 
 {% block page_header %}
@@ -32,39 +32,39 @@
         </div>
     </div>
 </div>
-<div class="card border-primary mx-auto mt-2 mb-3 col-sm-9 min-height">
+<div class="card mx-auto mt-2 mb-3 col-sm-9 min-height">
     <div class="card-body">
-        <h5 class="card-title">You have the following items in your Dungeon Keep.  <span class="float-right"><a
-                    href="{% url 'game_profile' %}">Profile</a> | <a href="{% url 'game_item_bag' %}">Bag</a> | <a
-                    href="{% url 'game_item_trade' %}">Trade</a></span></h5>
-        <h5 class=card-title">Your total hold size remaining = {{ hold_size }}</h5>
-        <ul>
-            {% for category in categories %}
-                <button class="btn btn-black rounded-0" type="button" data-toggle="collapse"
-                    data-target="#{{ category.name }}"
-                    aria-expanded="false" aria-controls="{{ category.name }}">
-                    {{ category.friendly_name }}
-                </button>
-            <div class="collapse" id="{{ category.name }}">
-                <div class="card col-sm-12 col-md-4">
-                    <div class="row mt-2 mb-2">
-                        {% for game_item in game_items %}
-                        {% if game_item.category.name == category.name and game_item.location == "Storage" %}
-                            <div class="card ml-2">
-                                <img class="image-size card-img-top img-fluid mx-auto" src="{{ MEDIA_URL}}{{ game_item.image }}"
-                                        alt="{{ game_item.product }}">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ game_item.product }}</h5>
-                                    <a href="#" class="btn btn-primary">Move {{ game_item.product }}</a>
-                                </div>
-                            </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
+        <p class="float-right"><a href="{% url 'game_profile' %}">Profile</a> | <a
+                href="{% url 'game_item_bag' %}">Bag</a> | <a href="{% url 'game_item_trade' %}">Trade</a></p><br>
+        <h5 class="card-title">You have the following items in your Dungeon Keep.</h5>
+        <h5 class=card-title">Your total hold size remaining = {{ hold_size }}</h5><br>
+        <!-- Sorting Items -->
+        <div class="container-fluid">
+            <div class="row float-right">
+                <select id="sort-selector" class="form-select form-select-sm">
+                    <option selected>Sort your items...</option>
+                    <option value="name_asc">Items: A-Z</option>
+                    <option value="name_desc">Items: Z-A</option>
+                    <option value="category_asc">Categories: A-Z</option>
+                    <option value="category_desc">Categories: Z-A</option>
+                </select>
             </div>
-            {% endfor %}
-        </ul>
+        </div><br>
+        <div class="row">
+        {% for game_item in game_items %}
+            {% if game_item.location == "Storage" %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
+                        <div class="card border-1" style="height: 15rem;">
+                            <img class="image-size card-img-top img-fluid mx-auto"
+                                src="{{ MEDIA_URL}}{{ game_item.image }}" alt="{{ game_item.product }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ game_item.product }}</h5>
+                            </div>
+                        </div>
+                    </div>
+            {% endif %}
+        {% endfor %}
+        </div>
     </div>
 </div>
 
