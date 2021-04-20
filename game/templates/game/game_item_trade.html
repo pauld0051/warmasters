@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'game/css/game.css' %}">
+    <link rel="stylesheet" href="{% static 'game/css/game.css' %}">
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'game/js/game.js' %}"></script>
+    <script src="{% static 'game/js/game.js' %}" defer></script>
 {% endblock %}
 
 {% block page_header %}
@@ -43,11 +43,18 @@
         <div class="container-fluid">
             <div class="row float-right">
                 <select id="sort-selector" class="form-select form-select-sm">
-                    <option selected>Sort your items...</option>
-                    <option value="name_asc">Items: A-Z</option>
-                    <option value="name_desc">Items: Z-A</option>
-                    <option value="category_asc">Categories: A-Z</option>
-                    <option value="category_desc">Categories: Z-A</option>
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort your items...
+                    </option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Items: A-Z
+                    </option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Items: Z-A
+                    </option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                        Categories: /\
+                    </option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                        Categories: \/
+                    </option>
                 </select>
             </div>
         </div><br>

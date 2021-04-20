@@ -126,9 +126,9 @@ def game_item_storage(request):
                 sortkey = request.GET['sort']
                 sort = sortkey
                 if sortkey == 'name':
-                    sortkey = 'product'
+                    sortkey = 'product__name'
                 if sortkey == 'category':
-                    sortkey == 'category'
+                    sortkey == 'category__name'
                 if 'direction' in request.GET:
                     direction = request.GET['direction']
                 if direction == 'desc':
@@ -162,6 +162,21 @@ def game_item_bag(request):
         profile = UserProfile.objects.get(user=request.user)
         bag_items = BagStorage.objects.get(user=request.user)
         game_items = GameItem.objects.filter(user=profile)
+        sort = None
+        direction = None
+        if request.GET:
+            if 'sort' in request.GET:
+                sortkey = request.GET['sort']
+                sort = sortkey
+                if sortkey == 'name':
+                    sortkey = 'product__name'
+                if sortkey == 'category':
+                    sortkey == 'category__name'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+                game_items = game_items.order_by(sortkey)
         products = Product.objects.all()
         categories = Category.objects.all()
         gold = request.user.gameprofile.gold
@@ -169,9 +184,8 @@ def game_item_bag(request):
         for game_item in game_items:
             if game_item.location == "Bag" and game_item.size:
                 reduce_bag_by += game_item.quantity * game_item.size
-                item_categories = game_item.category
         bag_size = bag_items.bag_size - reduce_bag_by
-
+        current_sorting = f'{sort}_{direction}'
         template = 'game/game_item_bag.html'
         context = {
             'bag': bag_items,
@@ -181,7 +195,7 @@ def game_item_bag(request):
             'categories': categories,
             'bag_size': bag_size,
             'gold': gold,
-            'item_categories': item_categories,
+            'current_sorting': current_sorting,
         }
         return render(request, template, context)
 
@@ -191,6 +205,21 @@ def game_item_trade(request):
         profile = UserProfile.objects.get(user=request.user)
         trade_items = Trade.objects.get(user=request.user)
         game_items = GameItem.objects.filter(user=profile)
+        sort = None
+        direction = None
+        if request.GET:
+            if 'sort' in request.GET:
+                sortkey = request.GET['sort']
+                sort = sortkey
+                if sortkey == 'name':
+                    sortkey = 'product__name'
+                if sortkey == 'category':
+                    sortkey == 'category__name'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+                game_items = game_items.order_by(sortkey)
         products = Product.objects.all()
         categories = Category.objects.all()
         gold = request.user.gameprofile.gold
@@ -199,6 +228,7 @@ def game_item_trade(request):
             if game_item.location == "Trade" and game_item.size:
                 reduce_trade_by += game_item.quantity * game_item.size
         trade_size = trade_items.trade_size - reduce_trade_by
+        current_sorting = f'{sort}_{direction}'
         template = 'game/game_item_trade.html'
         context = {
             'trade': trade_items,
@@ -208,5 +238,6 @@ def game_item_trade(request):
             'categories': categories,
             'gold': gold,
             'trade_size': trade_size,
+            'current_sorting': current_sorting,
         }
         return render(request, template, context)
