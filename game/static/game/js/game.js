@@ -22,3 +22,10 @@ $("#sort-selector").change(function () {
     window.location.replace(currentUrl);
   }
 });
+
+
+function enableDelete(e) {
+  let product_id = e.getAttribute("data");
+  console.log(product_id);
+  document.getElementById(`disabled_btn${product_id}`).disabled = !e.checked;
+}

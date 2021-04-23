@@ -60,17 +60,128 @@
         </div><br>
         <div class="row">
         {% for game_item in game_items %}
-            {% if game_item.location == "Trade" %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
-                <div class="card border-1" style="height: 15rem;">
-                    <img class="image-size card-img-top img-fluid mx-auto" src="{{ MEDIA_URL}}{{ game_item.image }}"
-                        alt="{{ game_item.product }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ game_item.product }}</h5>
+        {% if game_item.location == "Trade" %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3 item-select">
+            <div class="card border-1" style="height: 15rem; width: 12rem;">
+                <img class="image-size card-img-top img-fluid mx-auto" src="{{ MEDIA_URL}}{{ game_item.image }}"
+                    alt="{{ game_item.product }}">
+                <div class="card-body">
+                    <h6 class="card-title">{{ game_item.product }}</h6>
+                    <a href="#" data-toggle="modal" data-target="#discard_{{ game_item.product }}">
+                        <p><i class="fas fa-trash-alt"></i> Discard items</p>
+                    </a>
+                    <a href="#" data-toggle="modal" data-target="#move_{{ game_item.product }}">
+                        <p><i class="fas fa-arrows-alt"></i> Move items</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Item Modals for moving -->
+        <div class="modal fade" id="move_{{ game_item.product }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-bg-head text-center">
+                        <h5 class="modal-title w-100 text-black glow-2 font-weight-bold">Move items</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>{{ game_item.product }}</p>
+                                <img class="image-size card-img-top img-fluid mx-auto"
+                                    src="{{ MEDIA_URL}}{{ game_item.image }}" alt="{{ game_item.product }}">
+                                <p class="card-title">Quantity: {{ game_item.quantity }}</p>
+                            </div>
+                            <div class="col">
+                                <form action="" method="POST">
+                                    <h5>Move to...</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="select-location" id="bag">
+                                        <label class="form-check-label" for="bag">
+                                            Bag
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="select-location" id="storage"
+                                            checked>
+                                        <label class="form-check-label" for="storage">
+                                            Storage
+                                        </label>
+                                    </div>
+                                    {% if game_item.quantity < 2 %}
+                                    {% else %}
+                                    <label for="item-selection" class="form-label mt-2">Quantity</label>
+                                    <input type="range" class="form-range" id="item-selection" min="1"
+                                        max="{{ game_item.quantity }}" value="{{ game_item.quantity }}"
+                                        oninput="this.form.amountInput.value=this.value">
+                                    <input type="number" name="amountInput" min="1" max="{{ game_item.quantity }}"
+                                        value="{{ game_item.quantity }}"
+                                        oninput="this.form.amountRange.value=this.value" />
+                                    {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-bg-foot">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-black rounded-0 text-uppercase">Move</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            {% endif %}
+        </div>
+        <!-- Discard items modal -->
+        <div class="modal fade" id="discard_{{ game_item.product }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-bg-head text-center">
+                        <h5 class="modal-title w-100 text-black glow-2 font-weight-bold">Discard items</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>{{ game_item.product }}</p>
+                                <img class="image-size card-img-top img-fluid mx-auto"
+                                    src="{{ MEDIA_URL}}{{ game_item.image }}" alt="{{ game_item.product }}">
+                                <p class="card-title">Quantity: {{ game_item.quantity }}</p>
+                            </div>
+                            <div class="col">
+                                <form action="" method="POST">
+                                    {% if game_item.quantity < 2 %}
+                                    {% else %}
+                                    <label for="item-selection" class="form-label mt-2">Quantity</label>
+                                    <input type="range" class="form-range" id="item-selection" min="1"
+                                        max="{{ game_item.quantity }}" value="{{ game_item.quantity }}"
+                                        oninput="this.form.amountInput.value=this.value">
+                                    <input type="number" name="amountInput" min="1" max="{{ game_item.quantity }}"
+                                        value="{{ game_item.quantity }}"
+                                        oninput="this.form.amountRange.value=this.value" />
+                                    {% endif %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="checkbox{{ game_item.product }}" onchange="enableDelete(this)"
+                                            data="{{ game_item.product }}">
+                                        <label class="form-check-label" for="checkbox{{ game_item.product }}">
+                                            Are sure you want to delete?
+                                        </label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-bg-foot">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-black rounded-0 text-uppercase"
+                            id="disabled_btn{{ game_item.product }}" disabled>Discard</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
         {% endfor %}
         </div>
     </div>
