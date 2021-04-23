@@ -241,3 +241,22 @@ def game_item_trade(request):
             'current_sorting': current_sorting,
         }
         return render(request, template, context)
+
+
+def move_item(request):
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        game_items = GameItem.objects.filter(user=profile)
+        bag_items = BagStorage.objects.get(user=request.user)
+        storage_items = Storage.objects.get(user=request.user)
+        trade_items = Trade.objects.get(user=request.user)
+        if request.method == "POST":
+
+            return redirect('game_item_storage')
+            
+            
+
+
+
+
+

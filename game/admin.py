@@ -40,8 +40,6 @@ class CharacterAdmin(admin.ModelAdmin):
     ordering = ('user',)
 
 
-
-
 class GameItemAdmin(admin.ModelAdmin):
     list_display = (
         'user',

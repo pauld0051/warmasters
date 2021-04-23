@@ -8,4 +8,5 @@ urlpatterns = [
     path('game_item_storage/', views.game_item_storage, name='game_item_storage'),
     path('game_item_bag/', views.game_item_bag, name='game_item_bag'),
     path('game_item_trade/', views.game_item_trade, name='game_item_trade'),
+    path('move_item/', views.move_item, name='move_item'),
 ]
