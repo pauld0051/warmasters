@@ -63,3 +63,15 @@ class MakeProfileForm(forms.ModelForm):
                   'trade_items', 'bag_increase',
                   'storage_increase', 'trade_increase',
                   'enchantments', 'character_name',)
+
+
+class MoveItemForm(forms.ModelForm):
+    class Meta:
+        model = GameItem
+        fields = ('id', 'location',)
+
+
+class DeleteItemForm(forms.ModelForm):
+    class Meta:
+        model = GameItem
+        fields = ('id',)

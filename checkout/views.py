@@ -66,16 +66,17 @@ def checkout(request):
                             product=product,
                             quantity=item_data,
                         )
-                        game_item = GameItem(
+                        for _ in range(item_data):
+                            GameItem.objects.create(
                             user=UserProfile.objects.get(user=request.user),
                             product=product,
-                            quantity=item_data,
+                            quantity=1,
                             category=product.category,
                             image=product.image,
                             size=product.size,
                             weight=product.weight,
-                        )
-                        game_item.save(game_item)
+                            )
+                            
                         order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (

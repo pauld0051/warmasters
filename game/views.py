@@ -1,6 +1,8 @@
 from django.shortcuts import (
-    render, redirect, reverse, get_object_or_404
+    render, redirect, reverse,
+    get_object_or_404
 )
+from django.http import HttpResponseRedirect
 from django.db.models import F, Sum
 from django.contrib.auth.models import User
 from profiles.models import UserProfile
@@ -10,7 +12,10 @@ from .models import (
     BagStorage, Storage, Trade,
     CharacterChoice, GameItem
 )
-from .forms import CharacterForm, GameProfileForm
+from .forms import (
+    CharacterForm, GameProfileForm,
+    MoveItemForm
+)
 
 
 def make_profile(request):
@@ -154,6 +159,7 @@ def game_item_storage(request):
             'gold': gold,
             'current_sorting': current_sorting,
         }
+
         return render(request, template, context)
 
 
@@ -245,17 +251,30 @@ def game_item_trade(request):
 
 def move_item(request):
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
-        game_items = GameItem.objects.filter(user=profile)
-        bag_items = BagStorage.objects.get(user=request.user)
-        storage_items = Storage.objects.get(user=request.user)
-        trade_items = Trade.objects.get(user=request.user)
         if request.method == "POST":
+            current_url = request.path
+            location = request.POST.get('location')
+            id = request.POST.get('id')
+            move_to = GameItem.objects.get(id=id)
+            # Add the specific item(s) to a location
+            move_to.location = location
+            move_to.save()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-            return redirect('game_item_storage')
-            
-            
+        return redirect(current_url)
 
+
+def delete_item(request):
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            id = request.POST.get('id')
+            delete_item = GameItem.objects.get(id=id)
+            # Delete the specif item(s)
+            delete_item.delete()
+
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+        return redirect(current_url)
 
 
 
