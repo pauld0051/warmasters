@@ -56,9 +56,6 @@ def game_profile(request):
             bag = request.user.gameprofile.bag_size
             storage = request.user.gameprofile.storage_size
             trade = request.user.gameprofile.trade_size
-            bag_item = request.user.bagstorage.bag_item
-            storage_item = request.user.storage.storage_item
-            trade_item = request.user.trade.trade_item
             bag_increase = request.user.gameprofile.bag_increase
             storage_increase = request.user.gameprofile.storage_increase
             trade_increase = request.user.gameprofile.trade_increase
@@ -72,9 +69,6 @@ def game_profile(request):
             'bag': bag,
             'storage': storage,
             'trade': trade,
-            'bag_item': bag_item,
-            'storage_item': storage_item,
-            'trade_item': trade_item,
             'bag_increase': bag_increase,
             'storage_increase': storage_increase,
             'trade_increase': trade_increase,
