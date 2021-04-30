@@ -1,7 +1,7 @@
 /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
-    CSS from here: 
+    CSS from here:
     https://stripe.com/docs/stripe-js
 */
 
@@ -72,6 +72,7 @@ form.addEventListener("submit", function (ev) {
               name: $.trim(form.full_name.value),
               phone: $.trim(form.phone_number.value),
               email: $.trim(form.email.value),
+              phone: $.trim(form.phone_number.value),
               address: {
                 country: $.trim(form.country.value),
               },
@@ -79,7 +80,6 @@ form.addEventListener("submit", function (ev) {
           },
           shipping: {
             name: $.trim(form.full_name.value),
-            phone: $.trim(form.phone_number.value),
             address: {
               country: $.trim(form.country.value),
             },
