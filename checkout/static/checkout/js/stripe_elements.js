@@ -77,7 +77,6 @@ form.addEventListener("submit", function (ev) {
               },
             },
           },
-
           shipping: {
             name: $.trim(form.full_name.value),
             phone: $.trim(form.phone_number.value),
