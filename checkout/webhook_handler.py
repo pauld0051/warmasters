@@ -1,5 +1,5 @@
 """
-Webhook handler.
+webhook_handler
 """
 import json
 import time
@@ -64,10 +64,9 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_phone_number = shipping_details.phone
+                profile.default_phone_number = shipping_details.phone_number
                 profile.default_country = shipping_details.address.country
                 profile.save()
-
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -75,7 +74,7 @@ class StripeWH_Handler:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
                     email=billing_details.email,
-                    phone_number=shipping_details.phone,
+                    phone_number=shipping_details.phone_number,
                     country=shipping_details.country,
                     grand_total=grand_total,
                     original_bag=bag,
@@ -97,7 +96,7 @@ class StripeWH_Handler:
                     full_name=shipping_details.name,
                     user_profile=profile,
                     email=billing_details.email,
-                    phone_number=shipping_details.phone,
+                    phone_number=shipping_details.phone_number,
                     country=shipping_details.address.country,
                     grand_total=grand_total,
                     original_bag=bag,
@@ -118,6 +117,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
