@@ -23,6 +23,7 @@ class StripeWH_Handler:
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         cust_email = order.email
+        print(cust_email)
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
@@ -55,9 +56,7 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        print(billing_details, "*************** THIS IS BILLING DETAILS ***************")
         shipping_details = intent.shipping
-        print(shipping_details, "*************** THIS IS SHIPPING DETAILS ***************")
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Update profile information if save_info was checked

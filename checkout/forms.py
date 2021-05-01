@@ -28,6 +28,11 @@ class OrderForm(forms.ModelForm):
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['postcode'].widget = forms.HiddenInput()
+        self.fields['town_or_city'].widget = forms.HiddenInput()
+        self.fields['street_address1'].widget = forms.HiddenInput()
+        self.fields['street_address2'].widget = forms.HiddenInput()
+        self.fields['county'].widget = forms.HiddenInput()
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:
@@ -35,5 +40,7 @@ class OrderForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'                
+
             self.fields[field].label = False
+

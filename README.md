@@ -28,4 +28,8 @@ Warmasters is a near-real-time role playing game. Users can control how much tim
 
     From there follow the instructions: https://stripe.com/docs/stripe-cli/webhooks#forward-events
 
+### Known Bugs
+
+In order to get Stripe's webhooks to operate correctly a series of hidden fields were added to the base code in the form to allow input of street address1, street address2, country, and postcode. These are hidden on the template through the forms.py using: `self.fields['[field_name]'].widget = forms.HiddenInput()`
+
 Django's secret key: https://djecrety.ir/
