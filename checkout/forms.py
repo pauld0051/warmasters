@@ -33,6 +33,12 @@ class OrderForm(forms.ModelForm):
         self.fields['street_address1'].widget = forms.HiddenInput()
         self.fields['street_address2'].widget = forms.HiddenInput()
         self.fields['county'].widget = forms.HiddenInput()
+        self.fields['postcode'].initial = '12345'
+        self.fields['town_or_city'].initial = 'Town Name'
+        self.fields['street_address1'].initial = '123 Street'
+        self.fields['street_address2'].initial = 'Local Address'
+        self.fields['county'].initial = 'Local County'
+
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:
@@ -40,7 +46,6 @@ class OrderForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'                
-
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
 
