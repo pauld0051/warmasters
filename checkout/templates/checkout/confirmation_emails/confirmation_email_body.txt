@@ -7,11 +7,11 @@ Order Date: {{ order.date }}
 
 Order Total: ${{ order.order_total }}
 Grand Total: ${{ order.grand_total }}
-{% autoescape off %}
 {% for item in order.lineitems.all %}
-Purchased: {{ item.quantity }} x {{ item.product.friendly_name }}
+
+Purchased: {{ item.quantity }} x {% autoescape off %}{{ item.product.name }}{% endautoescape %}
 {% endfor %}
-{% endautoescape %}
+
 
 
 Your order will be available on your profile in storage.
