@@ -29,7 +29,8 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(
-        max_digits=6, decimal_places=2)
+        max_digits=6, decimal_places=2,
+        validators=[MaxValueValidator(100, message=None), MinValueValidator(0.0, message=None)])
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True,
         validators=[MaxValueValidator(5.0, message=None), MinValueValidator(0.0, message=None)])
