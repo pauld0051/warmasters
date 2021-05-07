@@ -41,11 +41,11 @@ class GameProfile(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
     bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=True)
+        20000), MinValueValidator(50)], null=True, blank=True)
     storage_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=True)
+        500000), MinValueValidator(50)], null=True, blank=True)
     trade_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=True)
+        100000), MinValueValidator(50)], null=True, blank=True)
     gold = models.PositiveIntegerField(null=True, blank=True)
     storage_items = models.CharField(max_length=254, null=True, blank=True)
     trade_items = models.CharField(max_length=254, null=True, blank=True)
@@ -85,7 +85,7 @@ class BagStorage(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
     bag_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=True)
+        20000), MinValueValidator(50)], null=True, blank=True)
     bag_item = models.ForeignKey(GameItem, null=True,
                               blank=True, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(null=True, blank=True)
@@ -103,7 +103,7 @@ class Storage(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
     storage_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=False)
+        500000), MinValueValidator(50)], null=True, blank=False)
     storage_item = models.CharField(max_length=254, null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)
@@ -119,7 +119,7 @@ class Trade(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
     trade_size = models.PositiveIntegerField(validators=[MaxValueValidator(
-        2000), MinValueValidator(50)], null=True, blank=False)
+        100000), MinValueValidator(50)], null=True, blank=False)
     trade_item = models.CharField(max_length=254, null=True, blank=True)
     quantity = models.PositiveIntegerField(null=True, blank=True)
     item_size = models.PositiveIntegerField(null=True, blank=True)

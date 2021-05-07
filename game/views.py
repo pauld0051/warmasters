@@ -104,7 +104,7 @@ def create_character(request):
                 strength=chosen_character_strength, image=chosen_character_image,
                 user=request.user)
             BagStorage.objects.create(user=request.user, bag_size=50)
-            Storage.objects.create(user=request.user, storage_size=200)
+            Storage.objects.create(user=request.user, storage_size=5000)
             Trade.objects.create(user=request.user, trade_size=50)
             return redirect('game_profile')
 

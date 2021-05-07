@@ -26,13 +26,18 @@ class OrderForm(forms.ModelForm):
             'street_address2': 'Street Address 2',
             'county': 'County, State or Locality',
         }
-
+        """
+        Hide address fields to satisfy Stripe's requirements
+        """
         self.fields['full_name'].widget.attrs['autofocus'] = True
         self.fields['postcode'].widget = forms.HiddenInput()
         self.fields['town_or_city'].widget = forms.HiddenInput()
         self.fields['street_address1'].widget = forms.HiddenInput()
         self.fields['street_address2'].widget = forms.HiddenInput()
         self.fields['county'].widget = forms.HiddenInput()
+        """
+        Give hidden fields a value to satisfy Stripe's requirements
+        """
         self.fields['postcode'].initial = '12345'
         self.fields['town_or_city'].initial = 'Town Name'
         self.fields['street_address1'].initial = '123 Street'
