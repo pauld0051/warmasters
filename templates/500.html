@@ -17,7 +17,27 @@
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
-        <p>You're here because you 500'd</p>
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4 text-yellow">This is a 404 error!</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p class="text-muted text-med-gray">There's not enough power created to produce the outcome you want.
+                There's lots of things going on here, but you can save yourself now by following the recommended course of action.
+            </p>
+            <p class="text-muted text-med-gray">The recommended course of action is to just click the <a
+                    href="{% url 'home' %}"> home</a> button and
+                try again.
+            </p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <a href="{% url 'home' %}"><img class="img-fluid" src="{{ MEDIA_URL }}dragon_500.jpg"
+                    alt="Dragon says this is a 500"></a>
+        </div>
     </div>
 </div>
 
