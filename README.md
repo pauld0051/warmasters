@@ -8,7 +8,7 @@ Warmasters (alpha-release) is the proof of concept to use Django to build a fant
   - [Project Goal](#project-goal)
   - [User Stories](#user-stories)
     - [User Stories for Customers](#user-stories-for-customers)
-    - [User Stories for Shop Administrators](#user-stories-for-shop-administrators)
+    - [User Stories for Shop Administrators](#user-stories-for-warmasters-administrators)
   - [Wireframes](#wireframes)
   - [Data Structure](#data-structure)
   - [Design](#design)
@@ -52,10 +52,13 @@ Access the site: <https://warmasters.herokuapp.com/>
 
 This is the fourth and final Milestone Project in Code Institute's Fullstack Development program. The purpose of this project was to create an e-commerce site using the Django framework, static file hosting with AWS, and a functional payment system with Stripe. The e-commerce section of the site is fully functional, Stripe payments and webhooks are operational and all static files, including media (images) are located at Amazon Web Services (AWS). The site is ready for the second alpha phase, setting up the game play. This will still use Django's framework.
 
+The site's frontend and payment system was inspired by Code Institute's Boutique Ado project: [Boutique Ado Code](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546)
+
 ### User Stories
 
 #### User Stories for Customers
 
+Table 1: User Stories for Customers at [Warmasters]((https://warmasters.herokuapp.com/))
 A gamer would like to: | So the gamer can: | Page(s) associated:
 --- | --- | ---
 Browse for products to use in the game | Purchase products to use in game | https://warmasters.herokuapp.com/products/
@@ -79,6 +82,56 @@ Update profile information | Keep up to date data | https://warmasters.herokuapp
 View previous purchases | See purchase history on the profile | https://warmasters.herokuapp.com/profile/
 Receive an email confirming a purchase | Have a receipt and confirmation of purchase in an email | *Purchase an item and have the email sent
 See items in storage, bag or trade locations | Use the items in an appropriate location | https://warmasters.herokuapp.com/game/game_item_bag/  https://warmasters.herokuapp.com/game/game_item_storage/  https://warmasters.herokuapp.com/game/game_item_trade/
+
+- *Table 1 provides details of customer's wants and outcomes with the associated page links.*
+
+#### User Stories for Warmasters Administrators
+
+Table 2: Admin Stories for site administrators at [Warmasters]((https://warmasters.herokuapp.com/)) 
+-- *note: some pages may not be accessible without being an administrator or superuser. Request access via email*
+An admin would like to: | So the admin can: | Page(s) associated:
+--- | --- | ---
+Add/Update/Delete a product | Keep the store up to date with the latest items for missions - only admins have access to these features | https://warmasters.herokuapp.com/products/add/ -- delete and edit can be done from the product page: https://warmasters.herokuapp.com/products/ (only viewable when logged in as an administrator)
+
+- *Table 2 details the types of actions an administrator can do from the website, however, all administrators will also have access to the database through Django's admin panel.*
+
+All new game items' images are added to AWS automatically. Currently the administration page is located at the default Django admin link. This will be altered during beta release as a security measure.
+
+The original urls.py location for the Django administration panel:
+`path('admin/', admin.site.urls),`
+
+This will be updated to a random key and administrators will need to bookmark the page.
+
+### Wireframes
+
+Following the user stories, wireframes were drawn to provide a starting point and guidance throughout the development process. Some minor changes occurred based on new outcomes and limitations in the code.
+
+Image 1: The game profile page on desktop
+![Warmasters Desktop Wireframes](readme\images\profile-page-desktop.png)
+Image 2: The game profile page on mobile
+![Warmasters Mobile Wireframes](readme\images\profile-page-mobile.png)
+
+Other wireframes:
+All pages are set up to mimic one and other, even in the game and shop pages. The backpack, storage and trade pages are identical except the headings.
+
+#### Mobile Wireframes
+
+Image 2: The game backpack/storage/trade page on mobile
+![Warmasters Mobile Wireframe - Backpack](readme\images\backpack-mobile.png)
+Image 3: The products page on mobile
+![Warmasters Mobile Wireframe - Products](readme\images\product-page-mobile.png)
+Image 4: The user profile page on mobile
+![Warmasters Mobile Wireframe - Profile](readme\images\users-page-mobile.png)
+
+#### Desktop Wireframes
+
+Image 5: The game backpack/storage/trade page on desktop
+![Warmasters Mobile Wireframe - Backpack](readme\images\backpack-desktop.png)
+Image 6: The products page on desktop
+![Warmasters Mobile Wireframe - Backpack](readme\images\product-page-desktop.png)
+Image 7: The user profile page on desktop
+![Warmasters Mobile Wireframe - Backpack](readme\images\users-page-desktop.png)
+
 
 
 ### Testing Webhooks
