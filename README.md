@@ -1,6 +1,47 @@
 # WARMASTERS
 
-Warmasters is a near-real-time role playing game. Users can control how much time they advance to create a continuous game play solution.
+[![Warmasters Logo](readme/images/w-icon.png)](https://warmasters.herokuapp.com/)
+
+Warmasters (alpha-release) is the proof of concept to use Django to build a fantasy role playing game with a shop to purchase items for in-game use.
+
+- [UX](#ux)
+  - [Project Goal](#project-goal)
+  - [User Stories](#user-stories)
+    - [User Stories for Customers](#user-stories-for-customers)
+    - [User Stories for Shop Administrators](#user-stories-for-shop-administrators)
+  - [Wireframes](#wireframes)
+  - [Data Structure](#data-structure)
+  - [Design](#design)
+    - [Typography](#typography)
+    - [Colors](#colors)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+    - [Home Page](#home-page)
+    - [Product Listing](#product-listing)
+    - [Product View](#product-view)
+    - [Producers Page](#producers-page)
+    - [User Account](#user-account)
+    - [Shopping Cart](#shopping-cart)
+    - [Payment](#payment)
+    - [Administrator features](#administrator-features)
+  - [Features Left to implement](#features-left-to-implement)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Local Deployment](#local-deployment)
+  - [Deployment to Heroku](#deployment-to-heroku)
+- [Technologies](#technologies)
+- [Tools Used](#tools-used)
+- [Credits](#credits)
+  - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
+
+---
+
+Welcome to Warmasters - the alpha testing for the shopfront and user profile, game profile, and storage of items. The game is in the development stage, with the proof of concept being released in this alpha version. Users will be able to login, create a profile, create a game profile, purchase items for up and coming missions and move items between storage, bags (for missions) and trade.
+
+Access the site: <https://pros-and-cons-1.herokuapp.com/>
+
+
 
 ## Testing Webhooks
 
