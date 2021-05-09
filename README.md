@@ -44,7 +44,7 @@ Welcome to Warmasters - the alpha testing for the shopfront and user profile, ga
 
 Access the site: <https://warmasters.herokuapp.com/>
 
-[![Am-I-Responsive](readme/images/amiresponsive-warmasters.png)](https://warmasters.herokuapp.com/)
+[![Am-I-Responsive](https://github.com/pauld0051/warmasters/blob/2f30ee9089ab79518715d998be93dc3406a82206/readme/images/amiresponsive-warmasters.png)](https://warmasters.herokuapp.com/)
 
 ## UX
 
@@ -107,9 +107,9 @@ This will be updated to a random key and administrators will need to bookmark th
 Following the user stories, wireframes were drawn to provide a starting point and guidance throughout the development process. Some minor changes occurred based on new outcomes and limitations in the code.
 
 Image 1: The game profile page on desktop
-![Warmasters Desktop Wireframes](readme\images\profile-page-desktop.png)
+![Warmasters Desktop Wireframes](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/profile-page-desktop.png)
 Image 2: The game profile page on mobile
-![Warmasters Mobile Wireframes](readme\images\profile-page-mobile.png)
+![Warmasters Mobile Wireframes](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/profile-page-mobile.png)
 
 Other wireframes:
 All pages are set up to mimic one and other, even in the game and shop pages. The backpack, storage and trade pages are identical except the headings.
@@ -117,20 +117,37 @@ All pages are set up to mimic one and other, even in the game and shop pages. Th
 #### Mobile Wireframes
 
 Image 2: The game backpack/storage/trade page on mobile
-![Warmasters Mobile Wireframe - Backpack](readme\images\backpack-mobile.png)
+![Warmasters Mobile Wireframe - Backpack](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/backpack-mobile.png)
 Image 3: The products page on mobile
-![Warmasters Mobile Wireframe - Products](readme\images\product-page-mobile.png)
+![Warmasters Mobile Wireframe - Products](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/product-page-mobile.png)
 Image 4: The user profile page on mobile
-![Warmasters Mobile Wireframe - Profile](readme\images\users-page-mobile.png)
+![Warmasters Mobile Wireframe - Profile](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/users-page-mobile.png)
 
 #### Desktop Wireframes
 
 Image 5: The game backpack/storage/trade page on desktop
-![Warmasters Mobile Wireframe - Backpack](readme\images\backpack-desktop.png)
+![Warmasters Mobile Wireframe - Backpack](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/backpack-desktop.png)
 Image 6: The products page on desktop
-![Warmasters Mobile Wireframe - Backpack](readme\images\product-page-desktop.png)
+![Warmasters Mobile Wireframe - Backpack](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/product-page-desktop.png)
 Image 7: The user profile page on desktop
-![Warmasters Mobile Wireframe - Backpack](readme\images\users-page-desktop.png)
+![Warmasters Mobile Wireframe - Backpack](https://github.com/pauld0051/warmasters/blob/ff5fd959e275782166637795e0fa8495a810a9e4/readme/images/users-page-desktop.png)
+
+### DESIGN
+
+The application was built using Bootstrap and its responsive grid system with a mobile-first precedent. The font, colours and design were all to give a dark *fantasy* feel about the site. Colours were chosen to best suit those with colour deficiency vision.
+
+#### Fonts
+
+One Google Font was used throughout the site; Medieval Sharp: https://fonts.google.com/specimen/MedievalSharp?preview.text_type=custom
+
+#### Colours
+
+Colours were chosen to best reflect the dark fantasy theme that the site was portraying. This includes the colour of text, background, imagery, overlays and headers.
+
+##### Main Site:
+
+![#555](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/555.jpg) - Background
+![#4e342e](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/4e342e.jpg) - Overlay
 
 
 

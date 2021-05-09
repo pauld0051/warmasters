@@ -27,8 +27,8 @@ body {
 }
 
 .war-now-button {
-    background: black;
-    color: white;
+    background: #000;
+    color: #fff;
     min-width: 260px;
 }
 
