@@ -25,10 +25,7 @@ Warmasters (alpha-release) is the proof of concept to use Django to build a fant
     - [Payment](#payment)
     - [Administrator features](#administrator-features)
   - [Features Left to implement](#features-left-to-implement)
-- [Testing](#testing)
-    -[Testing Webhooks](#testing-webhooks)
-        -[ngrok method](#ngrok-method)
-        -[Stripe CLI method](#stripe-cli-method)
+- [Testing](#testing) -[Testing Webhooks](#testing-webhooks) -[ngrok method](#ngrok-method) -[Stripe CLI method](#stripe-cli-method)
 - [Deployment](#deployment)
   - [Local Deployment](#local-deployment)
   - [Deployment to Heroku](#deployment-to-heroku)
@@ -58,7 +55,7 @@ The site's frontend and payment system was inspired by Code Institute's Boutique
 
 #### User Stories for Customers
 
-Table 1: User Stories for Customers at [Warmasters]((https://warmasters.herokuapp.com/))
+Table 1: User Stories for Customers at [Warmasters](<(https://warmasters.herokuapp.com/)>)
 A gamer would like to: | So the gamer can: | Page(s) associated:
 --- | --- | ---
 Browse for products to use in the game | Purchase products to use in game | https://warmasters.herokuapp.com/products/
@@ -77,23 +74,23 @@ Pay by using a credit card in from a safe and reputable source | Instantly purch
 Buy a product and have the item delivered instantly to the game profile | Login to their account to have the item delivered to their storage | https://warmasters.herokuapp.com/game/game_item_storage/
 Create a profile | Return and purchase items without needing to fill in details again | https://warmasters.herokuapp.com/profile/
 Create a game profile | Use an in-game profile to have items delivered to instantly | https://warmasters.herokuapp.com/game/make_profile/
-Create a character | Make a character to use during play based on one of four mythical characters |  https://warmasters.herokuapp.com/game/create_character/
+Create a character | Make a character to use during play based on one of four mythical characters | https://warmasters.herokuapp.com/game/create_character/
 Update profile information | Keep up to date data | https://warmasters.herokuapp.com/profile/
 View previous purchases | See purchase history on the profile | https://warmasters.herokuapp.com/profile/
-Receive an email confirming a purchase | Have a receipt and confirmation of purchase in an email | *Purchase an item and have the email sent
-See items in storage, bag or trade locations | Use the items in an appropriate location | https://warmasters.herokuapp.com/game/game_item_bag/  https://warmasters.herokuapp.com/game/game_item_storage/  https://warmasters.herokuapp.com/game/game_item_trade/
+Receive an email confirming a purchase | Have a receipt and confirmation of purchase in an email | \*Purchase an item and have the email sent
+See items in storage, bag or trade locations | Use the items in an appropriate location | https://warmasters.herokuapp.com/game/game_item_bag/ https://warmasters.herokuapp.com/game/game_item_storage/ https://warmasters.herokuapp.com/game/game_item_trade/
 
-- *Table 1 provides details of customer's wants and outcomes with the associated page links.*
+- _Table 1 provides details of customer's wants and outcomes with the associated page links._
 
 #### User Stories for Warmasters Administrators
 
-Table 2: Admin Stories for site administrators at [Warmasters]((https://warmasters.herokuapp.com/)) 
--- *note: some pages may not be accessible without being an administrator or superuser. Request access via email*
+Table 2: Admin Stories for site administrators at [Warmasters](<(https://warmasters.herokuapp.com/)>)
+-- _note: some pages may not be accessible without being an administrator or superuser. Request access via email_
 An admin would like to: | So the admin can: | Page(s) associated:
 --- | --- | ---
 Add/Update/Delete a product | Keep the store up to date with the latest items for missions - only admins have access to these features | https://warmasters.herokuapp.com/products/add/ -- delete and edit can be done from the product page: https://warmasters.herokuapp.com/products/ (only viewable when logged in as an administrator)
 
-- *Table 2 details the types of actions an administrator can do from the website, however, all administrators will also have access to the database through Django's admin panel.*
+- _Table 2 details the types of actions an administrator can do from the website, however, all administrators will also have access to the database through Django's admin panel._
 
 All new game items' images are added to AWS automatically. Currently the administration page is located at the default Django admin link. This will be altered during beta release as a security measure.
 
@@ -134,7 +131,7 @@ Image 7: The user profile page on desktop
 
 ### DESIGN
 
-The application was built using Bootstrap and its responsive grid system with a mobile-first precedent. The font, colours and design were all to give a dark *fantasy* feel about the site. Colours were chosen to best suit those with colour deficiency vision.
+The application was built using Bootstrap and its responsive grid system with a mobile-first precedent. The font, colours and design were all to give a dark _fantasy_ feel about the site. Colours were chosen to best suit those with colour deficiency vision.
 
 #### Fonts
 
@@ -146,10 +143,35 @@ Colours were chosen to best reflect the dark fantasy theme that the site was por
 
 ##### Main Site:
 
-![#555](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/555.jpg) - Background
-![#4e342e](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/4e342e.jpg) - Overlay
+![#555](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/555.jpg) - Background - #555
 
+![#4e342e](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/4e342e.jpg) - Overlay - #4e342e
 
+![#212529](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/212529.jpg) - Product badges - #212529
+
+![#b71c1c](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/b71c1c.jpg) - Button hover effect - #b71c1c
+
+![#dce775](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/dce775.jpg) - Horizontal rule - #dce775
+
+#### Fonts:
+
+![#ffea00](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/ffea00.jpg) - Text headings - #ffea00
+
+![#e0e0e0](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/e0e0e0.jpg) - Light coloured text - #e0e0e0
+
+![#bdbdbd](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/bdbdbd.jpg) - Darker coloured text -#bdbdbd
+
+![#c6ff00](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/c6ff00.jpg) - Lime coloured text - #c6ff00
+
+![#b71c1c](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/b71c1c.jpg) - Flame icons -#b71c1c
+
+![#6c757d](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/6c757d.jpg) - All Auth forms (login) - #6c757d
+
+![#aab7c4](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/aab7c4.jpg) - Placeholder text - #aab7c4
+
+![#222](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/222.jpg) - Border colours on forms - #222
+
+![#17a2b8](https://github.com/pauld0051/warmasters/blob/master/readme/images/colours/17a2b8.jpg) - Text info - #17a2b8
 
 ### Testing Webhooks
 
