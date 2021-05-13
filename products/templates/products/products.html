@@ -122,7 +122,6 @@
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
                                         </form>
-                                    
                                     {% endif %}
                                     {% if product.rating %}
                                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
@@ -132,10 +131,10 @@
                                     {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a> |
-                                        <a class="text-warning" data-toggle="modal" data-target="#delete">Delete</a>
+                                        <a class="text-warning" data-toggle="modal" data-target="#{{ product.name }}">Delete</a>
                                     </small>
                                     <!-- Delete Warning Modal -->
-                                    <div class="modal" id="delete" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal" id="{{ product.name }}" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header modal-product-head text-center">
