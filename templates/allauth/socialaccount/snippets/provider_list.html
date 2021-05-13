@@ -15,7 +15,7 @@
 </li>
 {% endfor %}
 {% endif %}
-<li class="list-group-item">
+<li class="list-group-item mb-3">
   <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" id="{{provider.name}}-connect"
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
     <img class="img-fluid social-image-mob rounded mx-auto d-none d-block d-sm-block d-md-none"
@@ -24,5 +24,4 @@
         src="{{MEDIA_URL}}login-{{provider.name}}.png" alt="{{provider.name}}">
   </a>
 </li>
-<br>
 {% endfor %}
