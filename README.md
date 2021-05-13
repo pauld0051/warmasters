@@ -318,7 +318,7 @@ Testing was done manually throughout the development process. The full rundown o
 
 Additionally, all code was validated in the following ways:
 
-HTML - All pages were successfully run through the [W3C HTML Validator](https://validator.w3.org/) to ensure compliance with the standards set by the W3C. Some errors unavoidably occur due to common ID names which are re-used according to Django. For instance this allows users to be either on a mobile or desktop device and still have access to identical features.
+HTML - All pages were successfully run through the [W3C HTML Validator](https://validator.w3.org/) to ensure compliance with the standards set by the W3C. Some errors unavoidably occur due to common ID names which are re-used according to Django. For instance this allows users to be either on a mobile or desktop device and still have access to identical features. A second set of errors were generated from Django's built in code, especially for log in purposes. This was subsequently ignored and no further changes were necessary.
 
 CSS - CSS validation with the [W3C Jigsaw Validator](https://jigsaw.w3.org/css-validator/) returned some expected and necessary flags from vendor extensions. Other than that, the code complies to the W3C standards.
 
