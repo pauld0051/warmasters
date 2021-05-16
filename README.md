@@ -350,6 +350,90 @@ Python - All Python code was checked using VS Code's PyLinter. Some "no 'objects
 
     From there follow the instructions: https://stripe.com/docs/stripe-cli/webhooks#forward-events
 
+## DEPLOYMENT
+
+Before deploying the application, ensure the following are installed (production was completed using VSCode):
+
+- Python 3
+- PIP
+- Git
+- Heroku CLI
+- Stripe CLI (if using the Stripe CLI method for testing webhooks)
+
+The application relies on the following services, and accounts will have to be created for them:
+
+- [Amazon AWS](https://aws.amazon.com/)
+- [Stripe](https://stripe.com/)
+- An email account, [GMail](https://mail.google.com/) is ideal as it is reliable and easy to set up.
+
+### Local Deployment
+
+These are the steps to deploy Warmasters locally.
+
+1. From the application's [repository](https://github.com/pauld0051/warmasters), click the "code" button and download the zip of the repository.
+
+  Alternatively, you can clone the repository using the following line in your terminal:
+
+```
+git clone https://github.com/pauld0051/warmasters
+```
+
+2. Access the folder in your terminal window and install the application's required modules using the following command:
+
+```
+python -m pip -r requirements.txt
+```
+
+3. Create a file containing your environmental variables called `env.py` at the root level of the application. It will need to contain the following lines and variables:
+
+```
+import os
+
+os.environ.setdefault('DEVELOPMENT', 'True')
+os.environ.setdefault('SECRET_KEY', '[YOUR_SECRET_KEY]')
+os.environ.setdefault('STRIPE_PUBLIC_KEY', '[YOUR_STRIPE_PUBLIC_KEY]')
+os.environ.setdefault('STRIPE_SECRET_KEY', '[YOUR_STRIPE_SECRET_KEY]')
+os.environ.setdefault('STRIPE_WH_SECRET', '[YOUR_STRIPE_WEBHOOK_SECRET_KEY]')
+os.environ.setdefault('EMAIL_HOST_USER', '[YOUR_EMAIL]')
+os.environ.setdefault('EMAIL_HOST_PASS', '[YOUR_EMAIL_SECRET_KEY]')
+os.environ.setdefault('DEFAULT_FROM_EMAIL', '[YOUR_EMAIL]')
+# If Deployed on Heroku using Postgres:
+os.environ.setdefault('DATABASE_URL', '[YOUR_POSTGRES_KEY]')
+```
+
+Please note that you will need to update the `SECRET_KEY` with your own secret key, as well as the Stripe keys and secret variables with those provided by those applications.
+
+If you plan on pushing this application to a public repository, ensure that `env.py` is added to your `.gitignore` file to protect your secrets.
+
+4. The application can now be run locally. In your terminal, type the command `python manage.py runserver`. The application will be available in your browser at the address `http:127.0.0.1:8000`. The admin panel can be located at `http:127.0.0.1:8000/admin/`.
+
+### Deployment to Heroku
+
+To deploy Beer WareHaus to Heroku, use the following steps:
+
+1. In Heroku create a new application.
+2. From the Heroku dashboard of your application, click on "Deploy", then "Deployment method" and select GitHub to connect the application to your github repository.
+3. In the Heroku Resources tab, navigate to the Add-Ons section and search for Heroku Postgres. The hobby level can be selected for this application.
+4. Click on the "settings" tab and on the button labelled "Reveal Config Vars". The Postgres addon will have created a link to the Postgres database.
+5. Add the following configuration variables to the application:
+
+Variable | Value
+--- | --- |
+AWS_ACCESS_KEY_ID | Access key provided by AWS
+AWS_SECRET_ACCESS_KEY | Secret access key provided by AWS
+USE_AWS | True
+DATABASE_URL | Your Postgres URL provided by the addon
+DEFAULT_FROM_EMAIL | Your email address you're sending from
+EMAIL_HOST_PASS | Secret key supplied by email provider
+EMAIL_HOST_USER | Your email address (probably the same as DEFAULT_FROM_EMAIL)
+SECRET_KEY | Django's secret key (use [https://djecrety.ir/](https://djecrety.ir/))
+STRIPE_PUBLIC_KEY | Stripe's public key for testing purposes
+STRIPE_SECRET_KEY | For access to Stripe's services use the key provided
+STRIPE_WH_SECRET | For Stripe's webhooks, use the key provided
+
+6. In the Heroku dashboard, deploy the application.
+7. To view the site, click "View App"
+
 ## KNOWN BUGS
 
 In order to get Stripe's webhooks to operate correctly a series of hidden fields were added to the base code in the form to allow input of street address1, street address2, country, and postcode. These are hidden on the template through the forms.py using: `self.fields['[field_name]'].widget = forms.HiddenInput()`
