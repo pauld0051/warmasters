@@ -34,7 +34,11 @@ Warmasters (alpha-release) is the proof of concept to use Django to build a fant
   - [Local Deployment](#local-deployment)
   - [Deployment to Heroku](#deployment-to-heroku)
 - [Technologies](#technologies)
-- [Tools Used](#tools-used)
+- [Tools Used](#tools)
+  - [Design Library](#design-library)
+  - [Tutorials](#tutorials)
+- [Known Bugs](#known-bugs)
+- [Version Control](#version-control)
 - [Credits](#credits)
   - [Media](#media)
   - [Acknowledgements](#acknowledgements)
@@ -409,7 +413,7 @@ If you plan on pushing this application to a public repository, ensure that `env
 
 ### Deployment to Heroku
 
-To deploy Beer WareHaus to Heroku, use the following steps:
+To deploy Warmasters to Heroku, use the following steps:
 
 1. In Heroku create a new application.
 2. From the Heroku dashboard of your application, click on "Deploy", then "Deployment method" and select GitHub to connect the application to your github repository.
@@ -433,6 +437,38 @@ STRIPE_WH_SECRET | For Stripe's webhooks, use the key provided
 
 6. In the Heroku dashboard, deploy the application.
 7. To view the site, click "View App"
+
+## TECHNOLOGIES
+
+- HTML
+- CSS
+- JavaScript / jQuery
+- Python
+- Django
+
+## TOOLS
+
+- [Github](https://github.com/)
+- [VS Code](https://code.visualstudio.com/)
+- [Pencil](https://pencil.evolus.vn/)
+- [Heroku](https://dashboard.heroku.com/apps)
+- [Windows Snip and Sketch](https://www.microsoft.com/en-us/p/snip-sketch/9mz95kl8mr0l?activetab=pivot:overviewtab)
+- [Windows Paint](https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9)
+- [Windows Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
+- [FontAwesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Favicon-converter](https://favicon.io/favicon-converter/)
+- [1001freefonts](https://www.1001freefonts.com/medici-text.font)
+- [Privacy policy](https://www.privacypolicygenerator.info/)
+- [Terms and Conditions](https://www.termsandconditionsgenerator.com/)
+
+## DESIGN LIBRARY
+
+- [Bootstrap](https://getbootstrap.com/)
+
+## TUTORIALS
+
+- [Google Login](https://whizzoe.medium.com/in-5-mins-set-up-google-login-to-sign-up-users-on-django-e71d5c38f5d5)
 
 ## KNOWN BUGS
 
@@ -460,3 +496,70 @@ from django.views.decorators.clickjacking import xframe_options_exempt
 And above the function:
 
 `@xframe_options_exempt`
+
+## VERSION CONTROL
+
+A fill list of all commits to Github can be found here: <https://github.com/pauld0051/warmasters/blob/master/readme/version-control.pdf>
+
+## CREDITS
+
+### Media
+
+- Warmasters logo font: [Medieval Sharp](https://fonts.google.com/specimen/MedievalSharp?preview.text_type=custom)
+- Modal Header and Footer map images:
+  - <https://feedthemultiverse.com/2017/06/07/continent-hazeln-fantasy-map-yellow-parchment-single-continent-islands/>
+  - <https://fuckyeahcartography.tumblr.com/image/20312896383>
+- Background image: [what-is-dungeons-dragons](https://theinnergamer.net/wp-content/uploads/2017/03/what-is-dungeons-dragons.jpg)
+
+### Product Images
+
+[swords](https://forgottenrealms.fandom.com/wiki/Sword)
+
+[arrows](http://www.crossplanes.com/2015/12/elemental-evil-deadfall-magic-arrow-for.html)
+
+[arrows](https://cdn.shopify.com/s/files/1/1530/4477/products/archers-equipment-medieval-arrow-quiver-bag-1_large.jpg?v=1548372646)
+
+[morning star](https://gbf.wiki/Morning_Star)
+
+[no image](https://writersedit.com/fiction-writing/5-essential-elements-every-fantasy-novel-needs/) 
+
+[crossbow bolt](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.by-the-sword.com%2Fp-42547-medieval-crossbow-war-bolt-12-14-inches.aspx&psig=AOvVaw1FIJ-bBPd5o9x3A2L-EQPL&ust=1616402554138000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLir5fP-wO8CFQAAAAAdAAAAABAD)
+
+[crossbow](https://i.pinimg.com/originals/51/ec/02/51ec0257952d08972e2c8c26015cd25f.jpg)
+
+[dagger](https://www.artstation.com/artwork/Ga6JKa)
+
+[clothing](https://pm1.narvii.com/6883/bf5a3a3ede3603f719c0f8545f0eda00ee31b2b5r1-2048-1505v2_hq.jpg)
+
+[clothing](https://www.wixmp.com/platform/login)
+
+[gold pieces](https://www.aidedd.org/en/rules/equipment/)
+
+[luck potion](https://www.artstation.com/artwork/vnd9O)
+
+[scimitar](http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQxxqmeL5v0EoUgF2clRisqVzNKuhKK1htmWJ2PRIv4HMq_UEdCMEJhPZTcu296eMum6sK_-GqL4l3ySpoFn0A)
+
+[bag storage](https://www.cgtrader.com/3d-models/sports/equipment/survival-backpack)
+
+[storage keep](https://thieves-kings.obsidianportal.com/wikis/armory)
+
+[trading post](https://www.wallpaperup.com/684219/MAGIC_GATHERING_fantasy_artwork_art_adventure_action_fighting_trading_card.html)
+
+[Summons spell](https://assetstore.unity.com/packages/vfx/particles/spells/fantasy-portal-fx-169581?aid=1101l3b93&utm_source=aff)
+
+[werewolf](https://www.deviantart.com/zitriana/art/Facepalm-wolf-418122181)
+
+[Google login](https://whizzoe.medium.com/in-5-mins-set-up-google-login-to-sign-up-users-on-django-e71d5c38f5d5)
+
+[Woman Warrior](https://tolkien-heroines.tumblr.com/post/183384141717/eowyn-by-eilidh)
+
+[Male heroes](https://dnd.wizards.com/dungeons-and-dragons/story/heroes)
+
+### Acknowledgements
+
+- The site was inspired by the amazing work of Code Institute's [Chris Z](https://github.com/ckz8780)
+- Code Institute's Tutor team gave tireless help and always made an effort to see that the job they started was finished! It wasn't possible without them
+- Django's "beginners" Discord channel's users provide countless hours of expertise and help
+- [Felipe Alarcon](https://github.com/fandressouza) for his amazing feedback, help and calming nature when needed
+- [Lorne Ashley](https://github.com/lornebb) a Code Institute student who understands the struggles and the code!
+- All the students in the Slack Channel for May 2020 start and their help in testing, support and advice
