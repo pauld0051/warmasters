@@ -107,3 +107,5 @@ Tests were conducted by various members of the Code Institute's Slack Community,
 All care was taken to ensure all bugs were removed. However, several times on Firefox on the developer's Windows based PC, the "delete" warning on items in a user's game profile would not activate. Restarting the server also did not solve the issue either. However, the issue is not able to be recreated on any other device and is considered a local only issue while under development.
 
 The 404 error page was tested by removing the "Development" boolean at Heroku, but could not be tested locally. The 500 error page was not tested at all and could not be reproduced. However, it is anticipated that the Django standard 500 error page will suffice should the custom built page fail to load.
+
+When removing an item from either the bag, storage or trade in the game profile, occasionally the checkbox does not activate the "delete" button. This issue can not be recreated and no solution has yet been found. Refreshing the page may allow the delete button to be reactivated.
